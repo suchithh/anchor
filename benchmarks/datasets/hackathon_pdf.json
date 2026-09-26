@@ -1,0 +1,496 @@
+{
+  "source_filename": "_5BEXTERNAL_5D_20THE_20HARNESS_20ENGINEERING_20&_20MODEL_20WRANGLING_20HACKATHON.pdf",
+  "source_sha256": "a9aa8e2b4f86294caa66d70caa8eecb10435b7870a5327e6c73d16fc786e2b9f",
+  "label_provenance": "Human-readable manual audit of local PDF; generator checks excerpts only, not semantics",
+  "claims": [
+    {
+      "claim": "MongoDB is the hackathon's data and memory layer.",
+      "gold_label": "SUPPORTED",
+      "gold_pages": [
+        2
+      ],
+      "gold_quote": "MongoDB as your data and memory",
+      "notes": "Manually checked source excerpt: MongoDB as your data and memory",
+      "claim_id": "pdf-00",
+      "scope": {
+        "corpus_id": "hackathon_pdf"
+      }
+    },
+    {
+      "claim": "The hackathon instructs teams to use PostgreSQL instead of MongoDB as the data and memory layer.",
+      "gold_label": "CONTRADICTED",
+      "gold_pages": [
+        2
+      ],
+      "gold_quote": "MongoDB as your data and memory",
+      "notes": "Manually checked source excerpt: MongoDB as your data and memory",
+      "claim_id": "pdf-01",
+      "scope": {
+        "corpus_id": "hackathon_pdf"
+      }
+    },
+    {
+      "claim": "Finalist projects must use the MongoDB Atlas Hackathon Sandbox.",
+      "gold_label": "SUPPORTED",
+      "gold_pages": [
+        3
+      ],
+      "gold_quote": "using the MongoDB Atlas Hackathon Sandbox",
+      "notes": "Manually checked source excerpt: using the MongoDB Atlas Hackathon Sandbox",
+      "claim_id": "pdf-02",
+      "scope": {
+        "corpus_id": "hackathon_pdf"
+      }
+    },
+    {
+      "claim": "Finalist projects are exempt from using the MongoDB Atlas Hackathon Sandbox.",
+      "gold_label": "CONTRADICTED",
+      "gold_pages": [
+        3
+      ],
+      "gold_quote": "using the MongoDB Atlas Hackathon Sandbox",
+      "notes": "Manually checked source excerpt: using the MongoDB Atlas Hackathon Sandbox",
+      "claim_id": "pdf-03",
+      "scope": {
+        "corpus_id": "hackathon_pdf"
+      }
+    },
+    {
+      "claim": "A hackathon team can have at most four members.",
+      "gold_label": "SUPPORTED",
+      "gold_pages": [
+        3
+      ],
+      "gold_quote": "Up to 4 members",
+      "notes": "Manually checked source excerpt: Up to 4 members",
+      "claim_id": "pdf-04",
+      "scope": {
+        "corpus_id": "hackathon_pdf"
+      }
+    },
+    {
+      "claim": "The maximum hackathon team size is six members.",
+      "gold_label": "CONTRADICTED",
+      "gold_pages": [
+        3
+      ],
+      "gold_quote": "Up to 4 members",
+      "notes": "Manually checked source excerpt: Up to 4 members",
+      "claim_id": "pdf-05",
+      "scope": {
+        "corpus_id": "hackathon_pdf"
+      }
+    },
+    {
+      "claim": "The hackathon requires original work.",
+      "gold_label": "SUPPORTED",
+      "gold_pages": [
+        3
+      ],
+      "gold_quote": "All work must be original",
+      "notes": "Manually checked source excerpt: All work must be original",
+      "claim_id": "pdf-06",
+      "scope": {
+        "corpus_id": "hackathon_pdf"
+      }
+    },
+    {
+      "claim": "The hackathon explicitly allows submission of prior projects.",
+      "gold_label": "CONTRADICTED",
+      "gold_pages": [
+        3
+      ],
+      "gold_quote": "All work must be original",
+      "notes": "Manually checked source excerpt: All work must be original",
+      "claim_id": "pdf-07",
+      "scope": {
+        "corpus_id": "hackathon_pdf"
+      }
+    },
+    {
+      "claim": "The demo access requirements include a public repository.",
+      "gold_label": "SUPPORTED",
+      "gold_pages": [
+        3
+      ],
+      "gold_quote": "repository is public",
+      "notes": "Manually checked source excerpt: repository is public",
+      "claim_id": "pdf-08",
+      "scope": {
+        "corpus_id": "hackathon_pdf"
+      }
+    },
+    {
+      "claim": "The demo access requirements demand that the repository remain private.",
+      "gold_label": "CONTRADICTED",
+      "gold_pages": [
+        3
+      ],
+      "gold_quote": "repository is public",
+      "notes": "Manually checked source excerpt: repository is public",
+      "claim_id": "pdf-09",
+      "scope": {
+        "corpus_id": "hackathon_pdf"
+      }
+    },
+    {
+      "claim": "Projects must be submitted through the Cerebral Valley Platform.",
+      "gold_label": "SUPPORTED",
+      "gold_pages": [
+        3
+      ],
+      "gold_quote": "All projects must be submitted through the Cerebral Valley Platform",
+      "notes": "Manually checked source excerpt: All projects must be submitted through the Cerebral Valley Platform",
+      "claim_id": "pdf-10",
+      "scope": {
+        "corpus_id": "hackathon_pdf"
+      }
+    },
+    {
+      "claim": "Projects must be submitted exclusively by email instead of the Cerebral Valley Platform.",
+      "gold_label": "CONTRADICTED",
+      "gold_pages": [
+        3
+      ],
+      "gold_quote": "All projects must be submitted through the Cerebral Valley Platform",
+      "notes": "Manually checked source excerpt: All projects must be submitted through the Cerebral Valley Platform",
+      "claim_id": "pdf-11",
+      "scope": {
+        "corpus_id": "hackathon_pdf"
+      }
+    },
+    {
+      "claim": "Submission includes a one-minute demo video showing code and functionality.",
+      "gold_label": "SUPPORTED",
+      "gold_pages": [
+        3
+      ],
+      "gold_quote": "a 1-minute demo video",
+      "notes": "Manually checked source excerpt: a 1-minute demo video",
+      "claim_id": "pdf-12",
+      "scope": {
+        "corpus_id": "hackathon_pdf"
+      }
+    },
+    {
+      "claim": "The specified submission demo video duration is ten minutes.",
+      "gold_label": "CONTRADICTED",
+      "gold_pages": [
+        3
+      ],
+      "gold_quote": "a 1-minute demo video",
+      "notes": "Manually checked source excerpt: a 1-minute demo video",
+      "claim_id": "pdf-13",
+      "scope": {
+        "corpus_id": "hackathon_pdf"
+      }
+    },
+    {
+      "claim": "The top six teams exhibit at MongoDB.local NYC.",
+      "gold_label": "SUPPORTED",
+      "gold_pages": [
+        2
+      ],
+      "gold_quote": "Top 6 teams exhibit",
+      "notes": "Manually checked source excerpt: Top 6 teams exhibit",
+      "claim_id": "pdf-14",
+      "scope": {
+        "corpus_id": "hackathon_pdf"
+      }
+    },
+    {
+      "claim": "Exactly the top twelve teams exhibit at MongoDB.local NYC.",
+      "gold_label": "CONTRADICTED",
+      "gold_pages": [
+        2
+      ],
+      "gold_quote": "Top 6 teams exhibit",
+      "notes": "Manually checked source excerpt: Top 6 teams exhibit",
+      "claim_id": "pdf-15",
+      "scope": {
+        "corpus_id": "hackathon_pdf"
+      }
+    },
+    {
+      "claim": "The top three teams demo on stage at MongoDB.local NYC.",
+      "gold_label": "SUPPORTED",
+      "gold_pages": [
+        2
+      ],
+      "gold_quote": "Top 3 teams demo on-stage",
+      "notes": "Manually checked source excerpt: Top 3 teams demo on-stage",
+      "claim_id": "pdf-16",
+      "scope": {
+        "corpus_id": "hackathon_pdf"
+      }
+    },
+    {
+      "claim": "The guide specifies that the top ten teams demo on stage at MongoDB.local NYC.",
+      "gold_label": "CONTRADICTED",
+      "gold_pages": [
+        2
+      ],
+      "gold_quote": "Top 3 teams demo on-stage",
+      "notes": "Manually checked source excerpt: Top 3 teams demo on-stage",
+      "claim_id": "pdf-17",
+      "scope": {
+        "corpus_id": "hackathon_pdf"
+      }
+    },
+    {
+      "claim": "Atlas Search provides typo-tolerant keyword search.",
+      "gold_label": "SUPPORTED",
+      "gold_pages": [
+        4
+      ],
+      "gold_quote": "typo-tolerant keyword search",
+      "notes": "Manually checked source excerpt: typo-tolerant keyword search",
+      "claim_id": "pdf-18",
+      "scope": {
+        "corpus_id": "hackathon_pdf"
+      }
+    },
+    {
+      "claim": "The guide says Atlas Search cannot tolerate typos in keyword search.",
+      "gold_label": "CONTRADICTED",
+      "gold_pages": [
+        4
+      ],
+      "gold_quote": "typo-tolerant keyword search",
+      "notes": "Manually checked source excerpt: typo-tolerant keyword search",
+      "claim_id": "pdf-19",
+      "scope": {
+        "corpus_id": "hackathon_pdf"
+      }
+    },
+    {
+      "claim": "OpenRouter provides free credits for the hackathon.",
+      "gold_label": "SUPPORTED",
+      "gold_pages": [
+        6
+      ],
+      "gold_quote": "free credits for the hackathon",
+      "notes": "Manually checked source excerpt: free credits for the hackathon",
+      "claim_id": "pdf-20",
+      "scope": {
+        "corpus_id": "hackathon_pdf"
+      }
+    },
+    {
+      "claim": "The guide says OpenRouter provides no free credits for the hackathon.",
+      "gold_label": "CONTRADICTED",
+      "gold_pages": [
+        6
+      ],
+      "gold_quote": "free credits for the hackathon",
+      "notes": "Manually checked source excerpt: free credits for the hackathon",
+      "claim_id": "pdf-21",
+      "scope": {
+        "corpus_id": "hackathon_pdf"
+      }
+    },
+    {
+      "claim": "Every participant gets 200 million free Voyage AI tokens for the event.",
+      "gold_label": "SUPPORTED",
+      "gold_pages": [
+        7
+      ],
+      "gold_quote": "200 million free tokens",
+      "notes": "Manually checked source excerpt: 200 million free tokens",
+      "claim_id": "pdf-22",
+      "scope": {
+        "corpus_id": "hackathon_pdf"
+      }
+    },
+    {
+      "claim": "The stated free Voyage AI allowance is exactly two million tokens per participant.",
+      "gold_label": "CONTRADICTED",
+      "gold_pages": [
+        7
+      ],
+      "gold_quote": "200 million free tokens",
+      "notes": "Manually checked source excerpt: 200 million free tokens",
+      "claim_id": "pdf-23",
+      "scope": {
+        "corpus_id": "hackathon_pdf"
+      }
+    },
+    {
+      "claim": "OpenRouter credits expire exactly 30 days after the hackathon.",
+      "gold_label": "INSUFFICIENT",
+      "gold_pages": [],
+      "reviewed_pages": [
+        6
+      ],
+      "notes": "No OpenRouter expiration is stated; Kiro's 30-day bonus is a different offer. All 8 pages reviewed.",
+      "claim_id": "pdf-24",
+      "scope": {
+        "corpus_id": "hackathon_pdf"
+      }
+    },
+    {
+      "claim": "The Atlas Hackathon Sandbox runs MongoDB server version 8.2.",
+      "gold_label": "INSUFFICIENT",
+      "gold_pages": [],
+      "reviewed_pages": [
+        3,
+        4
+      ],
+      "notes": "No server version is specified. All 8 pages reviewed.",
+      "claim_id": "pdf-25",
+      "scope": {
+        "corpus_id": "hackathon_pdf"
+      }
+    },
+    {
+      "claim": "Each sandbox cluster includes three dedicated search nodes.",
+      "gold_label": "INSUFFICIENT",
+      "gold_pages": [],
+      "reviewed_pages": [
+        3,
+        4
+      ],
+      "notes": "No search-node topology is stated. All 8 pages reviewed.",
+      "claim_id": "pdf-26",
+      "scope": {
+        "corpus_id": "hackathon_pdf"
+      }
+    },
+    {
+      "claim": "Each participant receives exactly $100 in OpenRouter credits.",
+      "gold_label": "INSUFFICIENT",
+      "gold_pages": [],
+      "reviewed_pages": [
+        6
+      ],
+      "notes": "The OpenRouter credit amount is not given. All 8 pages reviewed.",
+      "claim_id": "pdf-27",
+      "scope": {
+        "corpus_id": "hackathon_pdf"
+      }
+    },
+    {
+      "claim": "The sandbox is hosted in AWS us-east-1.",
+      "gold_label": "INSUFFICIENT",
+      "gold_pages": [],
+      "reviewed_pages": [
+        3,
+        4
+      ],
+      "notes": "The cluster region and cloud provider are not specified. All 8 pages reviewed.",
+      "claim_id": "pdf-28",
+      "scope": {
+        "corpus_id": "hackathon_pdf"
+      }
+    },
+    {
+      "claim": "The hackathon requires every project to use Python 3.11.",
+      "gold_label": "INSUFFICIENT",
+      "gold_pages": [],
+      "reviewed_pages": [
+        3,
+        4,
+        5
+      ],
+      "notes": "Language examples are resources, not a required Python version. All 8 pages reviewed.",
+      "claim_id": "pdf-29",
+      "scope": {
+        "corpus_id": "hackathon_pdf"
+      }
+    },
+    {
+      "claim": "The event's Voyage AI allowance expires at midnight on September 30.",
+      "gold_label": "INSUFFICIENT",
+      "gold_pages": [],
+      "reviewed_pages": [
+        7,
+        8
+      ],
+      "notes": "No such expiry time is given. All 8 pages reviewed.",
+      "claim_id": "pdf-30",
+      "scope": {
+        "corpus_id": "hackathon_pdf"
+      }
+    },
+    {
+      "claim": "Jev is a mandatory model for all hackathon submissions.",
+      "gold_label": "INSUFFICIENT",
+      "gold_pages": [],
+      "reviewed_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8
+      ],
+      "notes": "Jev is never named in the guide. All 8 pages reviewed.",
+      "claim_id": "pdf-31",
+      "scope": {
+        "corpus_id": "hackathon_pdf"
+      }
+    },
+    {
+      "claim": "The Atlas sandbox guarantees vector retrieval latency under 20 milliseconds.",
+      "gold_label": "INSUFFICIENT",
+      "gold_pages": [],
+      "reviewed_pages": [
+        4
+      ],
+      "notes": "No latency SLA appears in the guide. All 8 pages reviewed.",
+      "claim_id": "pdf-32",
+      "scope": {
+        "corpus_id": "hackathon_pdf"
+      }
+    },
+    {
+      "claim": "Every team is assigned a dedicated MongoDB engineer for the entire day.",
+      "gold_label": "INSUFFICIENT",
+      "gold_pages": [],
+      "reviewed_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8
+      ],
+      "notes": "No per-team staffing commitment is stated. All 8 pages reviewed.",
+      "claim_id": "pdf-33",
+      "scope": {
+        "corpus_id": "hackathon_pdf"
+      }
+    },
+    {
+      "claim": "The guide states that Atlas Automated Embeddings uses the voyage-3.5-lite model.",
+      "gold_label": "INSUFFICIENT",
+      "gold_pages": [],
+      "reviewed_pages": [
+        4
+      ],
+      "notes": "Automated Embeddings is described without a model name. All 8 pages reviewed.",
+      "claim_id": "pdf-34",
+      "scope": {
+        "corpus_id": "hackathon_pdf"
+      }
+    },
+    {
+      "claim": "The final judging score weights technical quality at exactly 40 percent.",
+      "gold_label": "INSUFFICIENT",
+      "gold_pages": [],
+      "reviewed_pages": [
+        2,
+        3
+      ],
+      "notes": "No numeric judging rubric is supplied. All 8 pages reviewed.",
+      "claim_id": "pdf-35",
+      "scope": {
+        "corpus_id": "hackathon_pdf"
+      }
+    }
+  ]
+}
