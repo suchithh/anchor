@@ -1,0 +1,2 @@
+# RFC provenance hashes cover exact upstream bytes, including line endings.
+grounding-service/benchmarks/datasets/http_rfc/*.txt -text

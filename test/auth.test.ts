@@ -14,8 +14,11 @@ test("the key helper hides input, writes owner-only storage, and refuses to over
   const saved = run(credential + "\n");
   assert.equal(saved.status, 0, saved.stderr);
   assert.ok(!(saved.stdout + saved.stderr).includes(credential));
-  assert.equal(statSync(target).mode & 0o777, 0o600);
-  assert.equal(statSync(join(dir, "secrets")).mode & 0o777, 0o700);
+  // Windows uses ACLs; POSIX permission bits are not implemented there.
+  if (process.platform !== "win32") {
+    assert.equal(statSync(target).mode & 0o777, 0o600);
+    assert.equal(statSync(join(dir, "secrets")).mode & 0o777, 0o700);
+  }
   assert.equal(readFileSync(target, "utf8"), credential + "\n");
   const duplicate = run("replacement-fixture\n");
   assert.equal(duplicate.status, 1);

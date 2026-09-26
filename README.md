@@ -1,9 +1,15 @@
 # pi-grail
 
+**Integrated Pi → MongoDB grounding demo:** see [DEMO.md](DEMO.md) for setup,
+the 60-second walkthrough and limits. The extension now observes completed assistant
+messages when `PI_GRAIL_GROUNDING_ENABLED=true`, calls the Python service asynchronously,
+and renders results inside Pi. Python lives under `grounding-service/`, imported with
+its full history. The original direct-Jev bootstrap documentation follows.
+
 Minimal extension bootstrap for the **released Pi CLI** and TypeSafe Jev. Uses
 the official `@typesafe-ai/sdk` directly. It does not depend on `pi-jev`, review
-workers automatically, select signals, intercept tools, or modify either Pi or
-pi-subagents. API calls happen only when explicitly requested.
+workers automatically, intercept tools, or modify either Pi or pi-subagents.
+Direct Jev API calls happen only when explicitly requested; enabled grounding uses Python.
 
 ## Setup
 

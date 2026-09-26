@@ -12,7 +12,7 @@ test("key-file fallback and environment override never expose a credential in pu
   const fromFile = readConfig({ PI_GRAIL_API_KEY_FILE: keyFile });
   assert.equal(fromFile.apiKey, "test-file-credential");
   assert.equal(fromFile.keySource, "file");
-  assert.equal(statSync(keyFile).mode & 0o777, 0o600);
+  if (process.platform !== "win32") assert.equal(statSync(keyFile).mode & 0o777, 0o600);
   const fromEnv = readConfig({ PI_GRAIL_API_KEY_FILE: keyFile, TYPESAFE_API_KEY: "test-env-credential" });
   assert.equal(fromEnv.keySource, "environment");
   assert.equal(fromEnv.apiKey, "test-env-credential");

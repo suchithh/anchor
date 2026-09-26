@@ -5,8 +5,10 @@ from pydantic import BaseModel, Field
 
 from src.config import Settings
 from src.grounding.store import RunConflict
-from src.models import VerificationRequest, VerificationResult
+from src.models import Chunk, VerificationRequest, VerificationResult
+from src.retrieval.atlas import chunk_from_document
 from src.runtime import runtime
+from src.util import digest
 
 
 @asynccontextmanager
@@ -64,3 +66,20 @@ async def run(run_id: str, include_events: bool = False):
     if result is None:
         raise HTTPException(404, "Unknown run")
     return result
+
+
+@app.get("/runs/{run_id}/claims/{claim_id}/evidence", response_model=list[Chunk])
+async def evidence(run_id: str, claim_id: str):
+    """Expose the persisted judgment's actual source chunks for harness correction."""
+    run = await app.state.runtime.runs.get(run_id, include_events=True)
+    event = run.get("events", {}).get(digest(claim_id)) if run else None
+    if not event:
+        raise HTTPException(404, "Unknown verified claim")
+    result = event["result"]
+    docs = await app.state.runtime.db.source_chunks.find(
+        {"_id": {"$in": result["evidence_ids"]},
+         "corpus_id": run["provenance"]["corpus_id"],
+         "corpus_revision": result["corpus_revision"]},
+        {"embedding": 0},
+    ).to_list(length=None)
+    return [chunk_from_document(doc) for doc in docs]

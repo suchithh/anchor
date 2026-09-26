@@ -3,9 +3,10 @@ import { StringEnum } from "@earendil-works/pi-ai";
 import { Type } from "typebox";
 import type { Questions } from "@typesafe-ai/sdk";
 import { evaluate, listModels, smoke, status } from "../src/jev.js";
+import { registerGrounding } from "../src/grounding-extension.js";
 
 export default function (pi: ExtensionAPI) {
-  // No API calls at load/startup, no automatic review, and no worker hooks yet.
+  registerGrounding(pi);
   function show(ctx: ExtensionContext, data: unknown, failed = false) {
     const text = JSON.stringify(data, null, 2);
     if (ctx.mode === "print") console.log(text);
