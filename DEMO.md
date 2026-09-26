@@ -1,4 +1,4 @@
-# Pi → Atlas grounding demo
+# Anchor: Pi → Atlas grounding demo
 
 This repository integrates Pi 0.87.1 and the Python grounding service. Both complete
 upstream histories are retained by a non-squashed subtree merge. Upstream remotes:

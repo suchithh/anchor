@@ -5,7 +5,7 @@
   "description": "Pi extension with asynchronous MongoDB Atlas grounding and in-Pi demo presentation",
   "type": "module",
   "license": "UNLICENSED",
-  "repository": {"type": "git", "url": "https://github.com/suchithh/pi-grail-integration.git"},
+  "repository": {"type": "git", "url": "https://github.com/suchithh/anchor.git"},
   "keywords": ["pi-package", "pi-extension", "jev"],
   "pi": {
     "extensions": ["./extensions/index.ts"]

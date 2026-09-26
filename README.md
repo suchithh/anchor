@@ -1,4 +1,6 @@
-# pi-grail
+# Anchor
+
+Ground truth for Pi agents, backed by MongoDB Atlas verified state.
 
 **Integrated Pi → MongoDB grounding demo:** see [DEMO.md](DEMO.md) for setup,
 the 60-second walkthrough and limits. The extension now observes completed assistant
