@@ -13,7 +13,7 @@ from benchmarks.generate_synthetic_dataset import generate as generate_synthetic
 from benchmarks.generate_synthetic_dataset import oracle_label
 from benchmarks.generate_technical_dataset import generate as generate_technical
 from benchmarks.report import write_report
-from benchmarks.runners import run_dataset
+from benchmarks.runners import APPROACHES, run_dataset
 from scripts.ingest_pdf import ingest
 from src.config import Settings
 from src.ingestion import find_pdf, parse_pdf
@@ -65,6 +65,7 @@ async def main(argv=None):
     p.add_argument("--reranker", choices=["none", "voyage"])
     p.add_argument("--retrieval-mode", choices=["vector", "hybrid", "hybrid_reranked"])
     p.add_argument("--output", default="benchmarks/results")
+    p.add_argument("--approaches", nargs="+", choices=APPROACHES, help="Run only selected comparisons")
     args = p.parse_args(argv)
     if args.repetitions < 1:
         p.error("--repetitions must be positive")
@@ -99,6 +100,7 @@ async def main(argv=None):
             "cost": "Includes query embeddings/reranking; ingestion reported separately; Atlas hosting excluded",
             "cache": "Separate namespace per approach/repetition; no cross-baseline cache reuse",
             "run_score_update": "atomic_update_pipeline_v1",
+            "approaches": args.approaches or APPROACHES,
         },
     }
     exit_code = 0
@@ -138,7 +140,14 @@ async def main(argv=None):
                     corpus = await ingest(rt, chunks, name)
                     report["ingestion"].append({**corpus, "wall_ms": elapsed(tick)})
                     await run_dataset(
-                        rt, claims, corpus, args.repetitions, args.seed, report["benchmark_id"], checkpoint
+                        rt,
+                        claims,
+                        corpus,
+                        args.repetitions,
+                        args.seed,
+                        report["benchmark_id"],
+                        checkpoint,
+                        args.approaches,
                     )
                     write_report(report, args.output)
             report["status"] = (

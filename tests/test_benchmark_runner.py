@@ -1,8 +1,10 @@
 import json
+from types import SimpleNamespace
 
 import httpx
 
-from benchmarks.runners import run_dataset
+from benchmarks.runners import posthoc, run_dataset
+from src.models import Judgment, Usage, VerificationResult
 from src.runtime import Runtime
 from tests.conftest import FakeRetriever
 
@@ -83,7 +85,7 @@ async def test_full_benchmark_orchestration_with_mock_providers(db, settings, ch
             seed=42,
             benchmark_id="mock_only",
         )
-    assert len(rows) == 6 and all(r["status"] == "completed" for r in rows)
+    assert len(rows) == 8 and all(r["status"] == "completed" for r in rows)
     warm = next(r for r in rows if r["phase"] == "warm")
     assert warm["metrics"]["cache_hit_rate"] == 1
     assert warm["metrics"]["cost"]["api_calls"] == 0
@@ -95,3 +97,30 @@ async def test_full_benchmark_orchestration_with_mock_providers(db, settings, ch
         if row["phase"] == "cold" and row["approach"] != "llm_posthoc":
             assert row["metrics"]["cost"]["api_calls"] == 3
             assert row["evidence"]["judged_evidence_hit_rate"] == 1
+
+
+async def test_posthoc_retains_other_claims_after_persistence_failure(db, settings, request_model):
+    requests = [request_model.model_copy(update={"claim_id": f"c{i}"}) for i in range(3)]
+    committed = []
+
+    async def judge(requests, chunks):
+        return {r.claim_id: Judgment.hard("SUPPORTED") for r in requests}, Usage(
+            provider="test", operation="posthoc", cost=0.1, cost_kind="actual"
+        )
+
+    async def record(request, result, provenance):
+        if request.claim_id == "c1":
+            raise TimeoutError("fixture write timeout")
+        committed.append(request.claim_id)
+
+    rt = SimpleNamespace(
+        db=db,
+        s=settings,
+        llm=SimpleNamespace(posthoc=judge, identity="test"),
+        runs=SimpleNamespace(record=record),
+    )
+    results = await posthoc(rt, requests, "rev1")
+    assert isinstance(results[0], VerificationResult)
+    assert isinstance(results[1], TimeoutError)
+    assert isinstance(results[2], VerificationResult)
+    assert committed == ["c0", "c2"]

@@ -7,7 +7,14 @@ from src.retrieval.atlas import chunk_from_document
 from src.util import digest, elapsed
 from src.verification.llm import ContextBudgetExceeded
 
-APPROACHES = ["llm_posthoc", "llm_parallel", "atlas_llm_judge", "atlas_jev", "atlas_jev_cached"]
+APPROACHES = [
+    "llm_posthoc",
+    "llm_parallel",
+    "atlas_llm_judge",
+    "atlas_jev",
+    "atlas_jev_cached",
+    "atlas_llm_cached",
+]
 
 
 class PairedRetriever:
@@ -77,12 +84,16 @@ async def posthoc(rt, requests, revision):
             usage=[usage] if i == 0 else [],
         )
         tick = perf_counter()
-        await rt.runs.record(request, result, provenance)
-        result.persistence_latency_ms = elapsed(tick)
-        results.append(result)
+        try:
+            await rt.runs.record(request, result, provenance)
+            result.persistence_latency_ms = elapsed(tick)
+            results.append(result)
+        except Exception as exc:  # noqa: BLE001 - retain failures per claim, like the parallel baseline
+            results.append(exc)
     # All claims become available together. Shared call duration is never divided by N.
     for result in results:
-        result.total_latency_ms = elapsed(start)
+        if isinstance(result, VerificationResult):
+            result.total_latency_ms = elapsed(start)
     return results
 
 
@@ -119,17 +130,17 @@ def evidence_hits(fixtures, records, documents):
     }
 
 
-async def run_dataset(rt, fixtures, corpus, repetitions, seed, benchmark_id, on_row=None):
+async def run_dataset(rt, fixtures, corpus, repetitions, seed, benchmark_id, on_row=None, approaches=None):
     rows = []
     documents = await rt.db.source_chunks.find(
         {"corpus_id": corpus["corpus_id"], "corpus_revision": corpus["revision"]}, {"embedding": 0}
     ).to_list()
     for repetition in range(repetitions):
         pinned = {}
-        order = APPROACHES.copy()
+        order = (approaches or APPROACHES).copy()
         random.Random(seed + repetition).shuffle(order)
         for approach in order:
-            passes = ["cold", "warm"] if approach == "atlas_jev_cached" else ["cold"]
+            passes = ["cold", "warm"] if approach.endswith("_cached") else ["cold"]
             namespace = f"{benchmark_id}:{corpus['corpus_id']}:{repetition}:{approach}"
             for phase in passes:
                 run_id = f"{namespace}:{phase}"
@@ -146,7 +157,7 @@ async def run_dataset(rt, fixtures, corpus, repetitions, seed, benchmark_id, on_
                 paired = PairedRetriever(rt.retriever, pinned)
                 service = rt.service(
                     "jev" if "jev" in approach else "llm",
-                    cache=approach == "atlas_jev_cached",
+                    cache=approach.endswith("_cached"),
                     namespace=namespace,
                     retriever=paired,
                 )

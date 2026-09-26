@@ -120,6 +120,8 @@ def write_report(report, directory="benchmarks/results"):
         "| Approach / phase | Corpus | Accuracy | p50 ms | p95 ms | Mean batch ms | Mean API USD | OpenRouter USD |",
         "|---|---:|---:|---:|---:|---:|---:|---:|",
     ]
+    if report.get("limitations"):
+        lines[6:6] = ["Notes:", "", *["- " + note for note in report["limitations"]], ""]
 
     def fmt(value):
         return "unavailable" if value is None else f"{value:.6g}"
