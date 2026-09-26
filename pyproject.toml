@@ -1,0 +1,28 @@
+[build-system]
+requires = ["setuptools>=69"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "grounding-harness"
+version = "0.1.0"
+description = "Persistent evidence-grounding verification and honest Atlas/Jev benchmarks"
+requires-python = ">=3.10"
+dependencies = [
+  "pymongo>=4.13,<5", "httpx>=0.28,<1", "pydantic>=2.10,<3",
+  "pydantic-settings>=2.7,<3", "fastapi>=0.115,<1", "uvicorn>=0.34,<1",
+  "pypdf>=5,<7",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=8,<10", "pytest-asyncio>=0.25,<2", "ruff>=0.11", "mongomock>=4.3,<5"]
+
+[tool.setuptools.packages.find]
+include = ["src*", "scripts*", "benchmarks*"]
+
+[tool.pytest.ini_options]
+asyncio_mode = "auto"
+testpaths = ["tests"]
+
+[tool.ruff]
+line-length = 110
+target-version = "py310"
