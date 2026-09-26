@@ -1,12 +1,17 @@
 # Running grounding harness
 
+**Integration handoff:** see [INTEGRATION.md](INTEGRATION.md) for the exact upstream contract,
+background-calling example, failure semantics and measured design decisions. Benchmark expansion
+was stopped to prioritize merging the claim/context supplier. The HTTP service now defaults to
+DeepSeek (`VERIFIER=llm`); Jev remains selectable with `VERIFIER=jev`.
+
 Verify selected claims against a declared corpus, persist reusable evidence judgments in MongoDB,
 and maintain support / contradiction / insufficient-evidence EWMAs. This implements the verification
 component only. Claim selection, risk inference, output correction, and a frontend are outside its scope.
 
 The code and offline tests are implemented. Atlas connectivity and small Voyage/Jev/DeepSeek calls
-have passed live checks. Full benchmark work is in progress; consult the report status before using
-any result. The current primary baseline is `deepseek/deepseek-v4.1-flash`, with reasoning disabled
+have passed live checks. Benchmark reports include completed passes, network failures and intentionally
+unfinished scaling experiments; consult their status before using any result. The current primary baseline is `deepseek/deepseek-v4.1-flash`, with reasoning disabled
 and bounded structured output. Catalog prices are starting prices; actual routed usage costs prevail.
 
 The primary suite is now **technical_http**: five official RFC snapshots, 582 section-aware chunks,
@@ -216,11 +221,14 @@ requests use their actual retrieval results. Scope and corpus revision are part 
 | `atlas_llm_judge` | Same judge and evidence, serial control | Disabled |
 | `atlas_jev` | Atlas retrieval + Jev, bounded concurrent claims | Disabled |
 | `atlas_jev_cached` cold/warm | Same Jev path; second pass reuses exact judgments | Isolated per repetition |
+| `atlas_llm_cached` cold/warm | Same persistent cache with the DeepSeek judge | Isolated per repetition |
 
 Warm passes use fresh run/claim processing and pay real MongoDB lookup/persistence costs. Both cold
 and warm passes are shown. A cold synthetic pass can already hit exact repeats, so its observed hit
 rate is reported. Estimated avoided verifier cost is based on the original charged call and is a
 counterfactual estimate, never claimed as a newly measured bill reduction.
+The extra cached-LLM control prevents attributing a general caching benefit specifically to Jev.
+Use `--approaches atlas_llm_cached` to run that control alone; selection is recorded in the report.
 
 For post-hoc, the default `POSTHOC_MAX_INPUT_BYTES=60000` is an explicit conservative UTF-8 payload
 guard, **not a token-count estimate or a discovered model context limit**. Set it to an appropriate
@@ -241,7 +249,7 @@ JSON includes accuracy, macro F1, per-class precision/recall, a confusion matrix
 Brier score where available, coverage, timing percentiles, batch throughput, API/token/cost counts,
 cache savings, and overlap ratios. Failures count against accuracy and recall; failed timings/costs
 are not silently labeled as successful INSUFFICIENT judgments. Failed API attempts remain counted,
-and an unreturned cost stays unknown. There are no hidden retries.
+and an unreturned cost stays unknown. Provider API requests are not retried automatically.
 `HTTP_TIMEOUT_SECONDS` bounds the complete provider request as well as HTTP read inactivity.
 `MONGODB_TIMEOUT_MS=30000` bounds each database operation, including pool waits and network I/O;
 server selection alone does not bound an established connection's operations. The local workload
