@@ -1,0 +1,42 @@
+[
+  {
+    "source_id": "rfc9110",
+    "source_uri": "https://www.rfc-editor.org/rfc/rfc9110.txt",
+    "filename": "rfc9110.txt",
+    "sha256": "21c1cdce6ab0e5509b04d84a28000836c7a087cf786efe6f04877ebfff47232a",
+    "bytes": 502941,
+    "retrieved_at": "2026-09-26T18:57:08.528152+00:00"
+  },
+  {
+    "source_id": "rfc9111",
+    "source_uri": "https://www.rfc-editor.org/rfc/rfc9111.txt",
+    "filename": "rfc9111.txt",
+    "sha256": "aeb52adb3279d5f23dae34f68af11bd5cef0a0aff7ffcd014c9ca93c5302cf3e",
+    "bytes": 84477,
+    "retrieved_at": "2026-09-26T18:57:08.665467+00:00"
+  },
+  {
+    "source_id": "rfc9112",
+    "source_uri": "https://www.rfc-editor.org/rfc/rfc9112.txt",
+    "filename": "rfc9112.txt",
+    "sha256": "e4f426bac6206b67fdf9e0da826154f70588db2133a0a86b15cde4ff725d8937",
+    "bytes": 109913,
+    "retrieved_at": "2026-09-26T18:57:08.733145+00:00"
+  },
+  {
+    "source_id": "rfc5861",
+    "source_uri": "https://www.rfc-editor.org/rfc/rfc5861.txt",
+    "filename": "rfc5861.txt",
+    "sha256": "1193f1c8710af162e1b9fb4250d79bc6dd26497df4caeeaaa8bcb2fefdd2529e",
+    "bytes": 10359,
+    "retrieved_at": "2026-09-26T18:57:08.789886+00:00"
+  },
+  {
+    "source_id": "rfc8246",
+    "source_uri": "https://www.rfc-editor.org/rfc/rfc8246.txt",
+    "filename": "rfc8246.txt",
+    "sha256": "69cfa5be26b918d5754652f5b93d707abdd68c0512f2ee66b92821cb64439b57",
+    "bytes": 10969,
+    "retrieved_at": "2026-09-26T18:57:08.872666+00:00"
+  }
+]

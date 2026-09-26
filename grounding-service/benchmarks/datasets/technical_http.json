@@ -1,0 +1,676 @@
+{
+  "corpus_id": "http_rfc",
+  "sources": [
+    {
+      "source_id": "rfc9110",
+      "sha256": "21c1cdce6ab0e5509b04d84a28000836c7a087cf786efe6f04877ebfff47232a"
+    },
+    {
+      "source_id": "rfc9111",
+      "sha256": "aeb52adb3279d5f23dae34f68af11bd5cef0a0aff7ffcd014c9ca93c5302cf3e"
+    },
+    {
+      "source_id": "rfc9112",
+      "sha256": "e4f426bac6206b67fdf9e0da826154f70588db2133a0a86b15cde4ff725d8937"
+    },
+    {
+      "source_id": "rfc5861",
+      "sha256": "1193f1c8710af162e1b9fb4250d79bc6dd26497df4caeeaaa8bcb2fefdd2529e"
+    },
+    {
+      "source_id": "rfc8246",
+      "sha256": "69cfa5be26b918d5754652f5b93d707abdd68c0512f2ee66b92821cb64439b57"
+    }
+  ],
+  "label_provenance": "Manual source-section audit; no model-generated gold labels",
+  "claims": [
+    {
+      "claim": "Under RFC 9111, an unqualified no-cache response directive requires successful validation before using the response to satisfy another request.",
+      "gold_label": "SUPPORTED",
+      "gold_pages": [],
+      "gold_original_ids": [
+        "d331894a155c573e5df4a13c65e53371f4d6a05199175cb3e0dc6f11cebff115"
+      ],
+      "gold_quote": "without forwarding it for validation and receiving a successful response",
+      "gold_sources": [
+        {
+          "source_id": "rfc9111",
+          "section": "5.2.2.4",
+          "url": "https://www.rfc-editor.org/rfc/rfc9111.html#section-5.2.2.4"
+        }
+      ],
+      "notes": "Manually checked normative passage; preserve directive qualification, precedence, and RFC version.",
+      "claim_id": "http-00",
+      "scope": {
+        "corpus_id": "http_rfc"
+      }
+    },
+    {
+      "claim": "Under RFC 9111, an unqualified no-cache response may be reused without validation whenever it is still fresh.",
+      "gold_label": "CONTRADICTED",
+      "gold_pages": [],
+      "gold_original_ids": [
+        "d331894a155c573e5df4a13c65e53371f4d6a05199175cb3e0dc6f11cebff115"
+      ],
+      "gold_quote": "without forwarding it for validation and receiving a successful response",
+      "gold_sources": [
+        {
+          "source_id": "rfc9111",
+          "section": "5.2.2.4",
+          "url": "https://www.rfc-editor.org/rfc/rfc9111.html#section-5.2.2.4"
+        }
+      ],
+      "notes": "Manually checked normative passage; preserve directive qualification, precedence, and RFC version.",
+      "claim_id": "http-01",
+      "scope": {
+        "corpus_id": "http_rfc"
+      }
+    },
+    {
+      "claim": "Under RFC 9111, when a response includes Cache-Control: max-age, the recipient must ignore its Expires header field.",
+      "gold_label": "SUPPORTED",
+      "gold_pages": [],
+      "gold_original_ids": [
+        "0b25d51cd3467bfb0a12ec57487e08679f96c220249fd7675f45624edffe213a"
+      ],
+      "gold_quote": "a recipient MUST ignore the Expires header field",
+      "gold_sources": [
+        {
+          "source_id": "rfc9111",
+          "section": "5.3",
+          "url": "https://www.rfc-editor.org/rfc/rfc9111.html#section-5.3"
+        }
+      ],
+      "notes": "Manually checked normative passage; preserve directive qualification, precedence, and RFC version.",
+      "claim_id": "http-02",
+      "scope": {
+        "corpus_id": "http_rfc"
+      }
+    },
+    {
+      "claim": "Under RFC 9111, Expires takes precedence over Cache-Control: max-age when both occur in the same response.",
+      "gold_label": "CONTRADICTED",
+      "gold_pages": [],
+      "gold_original_ids": [
+        "0b25d51cd3467bfb0a12ec57487e08679f96c220249fd7675f45624edffe213a"
+      ],
+      "gold_quote": "a recipient MUST ignore the Expires header field",
+      "gold_sources": [
+        {
+          "source_id": "rfc9111",
+          "section": "5.3",
+          "url": "https://www.rfc-editor.org/rfc/rfc9111.html#section-5.3"
+        }
+      ],
+      "notes": "Manually checked normative passage; preserve directive qualification, precedence, and RFC version.",
+      "claim_id": "http-03",
+      "scope": {
+        "corpus_id": "http_rfc"
+      }
+    },
+    {
+      "claim": "RFC 9111 prohibits a shared cache from storing a response carrying an unqualified private directive.",
+      "gold_label": "SUPPORTED",
+      "gold_pages": [],
+      "gold_original_ids": [
+        "2bffee974e705dbc47c2df71502c11a97f820ae1b72761c2561e924d4f733675"
+      ],
+      "gold_quote": "a shared cache MUST NOT store the response",
+      "gold_sources": [
+        {
+          "source_id": "rfc9111",
+          "section": "5.2.2.7",
+          "url": "https://www.rfc-editor.org/rfc/rfc9111.html#section-5.2.2.7"
+        }
+      ],
+      "notes": "Manually checked normative passage; preserve directive qualification, precedence, and RFC version.",
+      "claim_id": "http-04",
+      "scope": {
+        "corpus_id": "http_rfc"
+      }
+    },
+    {
+      "claim": "RFC 9111 permits a shared cache to store a response carrying an unqualified private directive solely because its max-age is positive.",
+      "gold_label": "CONTRADICTED",
+      "gold_pages": [],
+      "gold_original_ids": [
+        "2bffee974e705dbc47c2df71502c11a97f820ae1b72761c2561e924d4f733675"
+      ],
+      "gold_quote": "a shared cache MUST NOT store the response",
+      "gold_sources": [
+        {
+          "source_id": "rfc9111",
+          "section": "5.2.2.7",
+          "url": "https://www.rfc-editor.org/rfc/rfc9111.html#section-5.2.2.7"
+        }
+      ],
+      "notes": "Manually checked normative passage; preserve directive qualification, precedence, and RFC version.",
+      "claim_id": "http-05",
+      "scope": {
+        "corpus_id": "http_rfc"
+      }
+    },
+    {
+      "claim": "Under RFC 9111, a disconnected cache must return an error instead of reusing a stale response carrying must-revalidate.",
+      "gold_label": "SUPPORTED",
+      "gold_pages": [],
+      "gold_original_ids": [
+        "a14984cce95f19a33ed5e04a2d5043046d0cf534008160e60fa383efbce60eee"
+      ],
+      "gold_quote": "if a cache is disconnected, the cache MUST generate an error response rather than reuse the stale response",
+      "gold_sources": [
+        {
+          "source_id": "rfc9111",
+          "section": "5.2.2.2",
+          "url": "https://www.rfc-editor.org/rfc/rfc9111.html#section-5.2.2.2"
+        }
+      ],
+      "notes": "Manually checked normative passage; preserve directive qualification, precedence, and RFC version.",
+      "claim_id": "http-06",
+      "scope": {
+        "corpus_id": "http_rfc"
+      }
+    },
+    {
+      "claim": "Under RFC 9111, being disconnected allows a cache to ignore must-revalidate and serve the stale response.",
+      "gold_label": "CONTRADICTED",
+      "gold_pages": [],
+      "gold_original_ids": [
+        "a14984cce95f19a33ed5e04a2d5043046d0cf534008160e60fa383efbce60eee"
+      ],
+      "gold_quote": "if a cache is disconnected, the cache MUST generate an error response rather than reuse the stale response",
+      "gold_sources": [
+        {
+          "source_id": "rfc9111",
+          "section": "5.2.2.2",
+          "url": "https://www.rfc-editor.org/rfc/rfc9111.html#section-5.2.2.2"
+        }
+      ],
+      "notes": "Manually checked normative passage; preserve directive qualification, precedence, and RFC version.",
+      "claim_id": "http-07",
+      "scope": {
+        "corpus_id": "http_rfc"
+      }
+    },
+    {
+      "claim": "Under RFC 9111, a stored response whose Vary field contains \"*\" always fails to match.",
+      "gold_label": "SUPPORTED",
+      "gold_pages": [],
+      "gold_original_ids": [
+        "a73cdc0472aa5d9d0db548094e91de1066a84f8cf5be535be69fc963827a7c86"
+      ],
+      "gold_quote": "a Vary header field value containing a member \"*\" always fails to match",
+      "gold_sources": [
+        {
+          "source_id": "rfc9111",
+          "section": "4.1",
+          "url": "https://www.rfc-editor.org/rfc/rfc9111.html#section-4.1"
+        }
+      ],
+      "notes": "Manually checked normative passage; preserve directive qualification, precedence, and RFC version.",
+      "claim_id": "http-08",
+      "scope": {
+        "corpus_id": "http_rfc"
+      }
+    },
+    {
+      "claim": "Under RFC 9111, Vary: * makes a stored response match every request for its target URI.",
+      "gold_label": "CONTRADICTED",
+      "gold_pages": [],
+      "gold_original_ids": [
+        "a73cdc0472aa5d9d0db548094e91de1066a84f8cf5be535be69fc963827a7c86"
+      ],
+      "gold_quote": "a Vary header field value containing a member \"*\" always fails to match",
+      "gold_sources": [
+        {
+          "source_id": "rfc9111",
+          "section": "4.1",
+          "url": "https://www.rfc-editor.org/rfc/rfc9111.html#section-4.1"
+        }
+      ],
+      "notes": "Manually checked normative passage; preserve directive qualification, precedence, and RFC version.",
+      "claim_id": "http-09",
+      "scope": {
+        "corpus_id": "http_rfc"
+      }
+    },
+    {
+      "claim": "RFC 9111 requires a cache to handle delta-seconds overflow as 2147483648 or the greatest positive integer it can conveniently represent.",
+      "gold_label": "SUPPORTED",
+      "gold_pages": [],
+      "gold_original_ids": [
+        "feb5a96f74d6e190f56919f7181ad0ebade808c02724aff30812a75694fdfeb8"
+      ],
+      "gold_quote": "2147483648 (2^31) or the greatest positive integer it can conveniently represent",
+      "gold_sources": [
+        {
+          "source_id": "rfc9111",
+          "section": "1.2.2",
+          "url": "https://www.rfc-editor.org/rfc/rfc9111.html#section-1.2.2"
+        }
+      ],
+      "notes": "Manually checked normative passage; preserve directive qualification, precedence, and RFC version.",
+      "claim_id": "http-10",
+      "scope": {
+        "corpus_id": "http_rfc"
+      }
+    },
+    {
+      "claim": "RFC 9111 requires overflowing delta-seconds values to wrap to negative integers.",
+      "gold_label": "CONTRADICTED",
+      "gold_pages": [],
+      "gold_original_ids": [
+        "feb5a96f74d6e190f56919f7181ad0ebade808c02724aff30812a75694fdfeb8"
+      ],
+      "gold_quote": "2147483648 (2^31) or the greatest positive integer it can conveniently represent",
+      "gold_sources": [
+        {
+          "source_id": "rfc9111",
+          "section": "1.2.2",
+          "url": "https://www.rfc-editor.org/rfc/rfc9111.html#section-1.2.2"
+        }
+      ],
+      "notes": "Manually checked normative passage; preserve directive qualification, precedence, and RFC version.",
+      "claim_id": "http-11",
+      "scope": {
+        "corpus_id": "http_rfc"
+      }
+    },
+    {
+      "claim": "RFC 9110 forbids a server from sending content in a HEAD response.",
+      "gold_label": "SUPPORTED",
+      "gold_pages": [],
+      "gold_original_ids": [
+        "d781c31861f3f3bcab0e098fed0631d8b1dde96c0a6558fcf57b36c1b7fdd545"
+      ],
+      "gold_quote": "the server MUST NOT send content in the response",
+      "gold_sources": [
+        {
+          "source_id": "rfc9110",
+          "section": "9.3.2",
+          "url": "https://www.rfc-editor.org/rfc/rfc9110.html#section-9.3.2"
+        }
+      ],
+      "notes": "Manually checked normative passage; preserve directive qualification, precedence, and RFC version.",
+      "claim_id": "http-12",
+      "scope": {
+        "corpus_id": "http_rfc"
+      }
+    },
+    {
+      "claim": "RFC 9110 requires a HEAD response to contain the same response body as GET.",
+      "gold_label": "CONTRADICTED",
+      "gold_pages": [],
+      "gold_original_ids": [
+        "d781c31861f3f3bcab0e098fed0631d8b1dde96c0a6558fcf57b36c1b7fdd545"
+      ],
+      "gold_quote": "the server MUST NOT send content in the response",
+      "gold_sources": [
+        {
+          "source_id": "rfc9110",
+          "section": "9.3.2",
+          "url": "https://www.rfc-editor.org/rfc/rfc9110.html#section-9.3.2"
+        }
+      ],
+      "notes": "Manually checked normative passage; preserve directive qualification, precedence, and RFC version.",
+      "claim_id": "http-13",
+      "scope": {
+        "corpus_id": "http_rfc"
+      }
+    },
+    {
+      "claim": "Under RFC 9110 strong entity-tag comparison, W/\"1\" and \"1\" do not match.",
+      "gold_label": "SUPPORTED",
+      "gold_pages": [],
+      "gold_original_ids": [
+        "8bb044fcf35087a0280d6dee0a9d9307b3fc0545c93784aad73cea184cf18df9"
+      ],
+      "gold_quote": "two entity tags are equivalent if both are not weak",
+      "gold_sources": [
+        {
+          "source_id": "rfc9110",
+          "section": "8.8.3.2",
+          "url": "https://www.rfc-editor.org/rfc/rfc9110.html#section-8.8.3.2"
+        }
+      ],
+      "notes": "Manually checked normative passage; preserve directive qualification, precedence, and RFC version.",
+      "claim_id": "http-14",
+      "scope": {
+        "corpus_id": "http_rfc"
+      }
+    },
+    {
+      "claim": "Under RFC 9110 strong entity-tag comparison, W/\"1\" and \"1\" match because their opaque tags are identical.",
+      "gold_label": "CONTRADICTED",
+      "gold_pages": [],
+      "gold_original_ids": [
+        "8bb044fcf35087a0280d6dee0a9d9307b3fc0545c93784aad73cea184cf18df9"
+      ],
+      "gold_quote": "two entity tags are equivalent if both are not weak",
+      "gold_sources": [
+        {
+          "source_id": "rfc9110",
+          "section": "8.8.3.2",
+          "url": "https://www.rfc-editor.org/rfc/rfc9110.html#section-8.8.3.2"
+        }
+      ],
+      "notes": "Manually checked normative passage; preserve directive qualification, precedence, and RFC version.",
+      "claim_id": "http-15",
+      "scope": {
+        "corpus_id": "http_rfc"
+      }
+    },
+    {
+      "claim": "RFC 9112 says Transfer-Encoding overrides Content-Length when a message contains both fields.",
+      "gold_label": "SUPPORTED",
+      "gold_pages": [],
+      "gold_original_ids": [
+        "02d95d36f94f7b29ffc992105bc2c5d28397d29462baabf7eb8d8a875517e706"
+      ],
+      "gold_quote": "the Transfer-Encoding overrides the Content-Length",
+      "gold_sources": [
+        {
+          "source_id": "rfc9112",
+          "section": "6.3",
+          "url": "https://www.rfc-editor.org/rfc/rfc9112.html#section-6.3"
+        }
+      ],
+      "notes": "Manually checked normative passage; preserve directive qualification, precedence, and RFC version.",
+      "claim_id": "http-16",
+      "scope": {
+        "corpus_id": "http_rfc"
+      }
+    },
+    {
+      "claim": "RFC 9112 says Content-Length overrides Transfer-Encoding when a message contains both fields.",
+      "gold_label": "CONTRADICTED",
+      "gold_pages": [],
+      "gold_original_ids": [
+        "02d95d36f94f7b29ffc992105bc2c5d28397d29462baabf7eb8d8a875517e706"
+      ],
+      "gold_quote": "the Transfer-Encoding overrides the Content-Length",
+      "gold_sources": [
+        {
+          "source_id": "rfc9112",
+          "section": "6.3",
+          "url": "https://www.rfc-editor.org/rfc/rfc9112.html#section-6.3"
+        }
+      ],
+      "notes": "Manually checked normative passage; preserve directive qualification, precedence, and RFC version.",
+      "claim_id": "http-17",
+      "scope": {
+        "corpus_id": "http_rfc"
+      }
+    },
+    {
+      "claim": "RFC 9112 completes chunked transfer coding with a zero-size chunk, an optional trailer section, and a final empty line.",
+      "gold_label": "SUPPORTED",
+      "gold_pages": [],
+      "gold_original_ids": [
+        "d29a2aec3ae1538a82a274930e5ff82d9a9e65a6b6210fa03fb0e694409da623"
+      ],
+      "gold_quote": "a chunk with a chunk-size of zero is received",
+      "gold_sources": [
+        {
+          "source_id": "rfc9112",
+          "section": "7.1",
+          "url": "https://www.rfc-editor.org/rfc/rfc9112.html#section-7.1"
+        }
+      ],
+      "notes": "Manually checked normative passage; preserve directive qualification, precedence, and RFC version.",
+      "claim_id": "http-18",
+      "scope": {
+        "corpus_id": "http_rfc"
+      }
+    },
+    {
+      "claim": "RFC 9112 says chunked transfer coding is complete immediately after any nonzero-size chunk, without a zero-size terminating chunk.",
+      "gold_label": "CONTRADICTED",
+      "gold_pages": [],
+      "gold_original_ids": [
+        "d29a2aec3ae1538a82a274930e5ff82d9a9e65a6b6210fa03fb0e694409da623"
+      ],
+      "gold_quote": "a chunk with a chunk-size of zero is received",
+      "gold_sources": [
+        {
+          "source_id": "rfc9112",
+          "section": "7.1",
+          "url": "https://www.rfc-editor.org/rfc/rfc9112.html#section-7.1"
+        }
+      ],
+      "notes": "Manually checked normative passage; preserve directive qualification, precedence, and RFC version.",
+      "claim_id": "http-19",
+      "scope": {
+        "corpus_id": "http_rfc"
+      }
+    },
+    {
+      "claim": "RFC 5861's max-age=600, stale-while-revalidate=30 example allows an additional 30 seconds of stale serving while asynchronous validation is attempted.",
+      "gold_label": "SUPPORTED",
+      "gold_pages": [],
+      "gold_original_ids": [
+        "7512138377f89d3eba306bdd889dce8919520e70e9361bef34395bdce476bbb2"
+      ],
+      "gold_quote": "fresh for 600 seconds, and it may continue to be served stale for up to an additional 30 seconds",
+      "gold_sources": [
+        {
+          "source_id": "rfc5861",
+          "section": "3.1",
+          "url": "https://www.rfc-editor.org/rfc/rfc5861.html#section-3.1"
+        }
+      ],
+      "notes": "Manually checked normative passage; preserve directive qualification, precedence, and RFC version.",
+      "claim_id": "http-20",
+      "scope": {
+        "corpus_id": "http_rfc"
+      }
+    },
+    {
+      "claim": "RFC 5861's max-age=600, stale-while-revalidate=30 example grants 630 additional seconds of stale serving after freshness expires.",
+      "gold_label": "CONTRADICTED",
+      "gold_pages": [],
+      "gold_original_ids": [
+        "7512138377f89d3eba306bdd889dce8919520e70e9361bef34395bdce476bbb2"
+      ],
+      "gold_quote": "fresh for 600 seconds, and it may continue to be served stale for up to an additional 30 seconds",
+      "gold_sources": [
+        {
+          "source_id": "rfc5861",
+          "section": "3.1",
+          "url": "https://www.rfc-editor.org/rfc/rfc5861.html#section-3.1"
+        }
+      ],
+      "notes": "Manually checked normative passage; preserve directive qualification, precedence, and RFC version.",
+      "claim_id": "http-21",
+      "scope": {
+        "corpus_id": "http_rfc"
+      }
+    },
+    {
+      "claim": "RFC 8246 limits immutable to the freshness lifetime; stale responses should be revalidated normally.",
+      "gold_label": "SUPPORTED",
+      "gold_pages": [],
+      "gold_original_ids": [
+        "62b5d64e7b2f44218bfd4592cf09449ca54149b9578ddd2b590c422c714cdec8"
+      ],
+      "gold_quote": "The immutable extension only applies during the freshness lifetime",
+      "gold_sources": [
+        {
+          "source_id": "rfc8246",
+          "section": "2",
+          "url": "https://www.rfc-editor.org/rfc/rfc8246.html#section-2"
+        }
+      ],
+      "notes": "Manually checked normative passage; preserve directive qualification, precedence, and RFC version.",
+      "claim_id": "http-22",
+      "scope": {
+        "corpus_id": "http_rfc"
+      }
+    },
+    {
+      "claim": "RFC 8246 says immutable permanently exempts a cached response from revalidation, including after it becomes stale.",
+      "gold_label": "CONTRADICTED",
+      "gold_pages": [],
+      "gold_original_ids": [
+        "62b5d64e7b2f44218bfd4592cf09449ca54149b9578ddd2b590c422c714cdec8"
+      ],
+      "gold_quote": "The immutable extension only applies during the freshness lifetime",
+      "gold_sources": [
+        {
+          "source_id": "rfc8246",
+          "section": "2",
+          "url": "https://www.rfc-editor.org/rfc/rfc8246.html#section-2"
+        }
+      ],
+      "notes": "Manually checked normative passage; preserve directive qualification, precedence, and RFC version.",
+      "claim_id": "http-23",
+      "scope": {
+        "corpus_id": "http_rfc"
+      }
+    },
+    {
+      "claim": "A stored response with max-age=600 is still fresh right now.",
+      "gold_label": "INSUFFICIENT",
+      "gold_pages": [],
+      "gold_original_ids": [],
+      "gold_sources": [],
+      "notes": "No current age, Date, Age, receipt time, or clock values are supplied.",
+      "claim_id": "http-24",
+      "scope": {
+        "corpus_id": "http_rfc"
+      }
+    },
+    {
+      "claim": "Two requests for /report are interchangeable under Vary: Accept-Language.",
+      "gold_label": "INSUFFICIENT",
+      "gold_pages": [],
+      "gold_original_ids": [],
+      "gold_sources": [],
+      "notes": "The requests' Accept-Language field values are not supplied.",
+      "claim_id": "http-25",
+      "scope": {
+        "corpus_id": "http_rfc"
+      }
+    },
+    {
+      "claim": "The cached representation's strong entity tag matches the origin's current strong entity tag.",
+      "gold_label": "INSUFFICIENT",
+      "gold_pages": [],
+      "gold_original_ids": [],
+      "gold_sources": [],
+      "notes": "Neither the stored nor current origin entity-tag value is supplied.",
+      "claim_id": "http-26",
+      "scope": {
+        "corpus_id": "http_rfc"
+      }
+    },
+    {
+      "claim": "The origin server has successfully validated our cached response during the last minute.",
+      "gold_label": "INSUFFICIENT",
+      "gold_pages": [],
+      "gold_original_ids": [],
+      "gold_sources": [],
+      "notes": "No validation response or runtime timestamps are in the corpus.",
+      "claim_id": "http-27",
+      "scope": {
+        "corpus_id": "http_rfc"
+      }
+    },
+    {
+      "claim": "Our cache's current response is within the stale-if-error=1200 allowance.",
+      "gold_label": "INSUFFICIENT",
+      "gold_pages": [],
+      "gold_original_ids": [],
+      "gold_sources": [],
+      "notes": "No current staleness or error condition is supplied.",
+      "claim_id": "http-28",
+      "scope": {
+        "corpus_id": "http_rfc"
+      }
+    },
+    {
+      "claim": "The response currently cached for /private carries an unqualified private directive.",
+      "gold_label": "INSUFFICIENT",
+      "gold_pages": [],
+      "gold_original_ids": [],
+      "gold_sources": [],
+      "notes": "The actual response headers for /private are not supplied.",
+      "claim_id": "http-29",
+      "scope": {
+        "corpus_id": "http_rfc"
+      }
+    },
+    {
+      "claim": "Our HTTP reverse proxy evicts cached objects using least-recently-used replacement.",
+      "gold_label": "INSUFFICIENT",
+      "gold_pages": [],
+      "gold_original_ids": [],
+      "gold_sources": [],
+      "notes": "The RFCs specify protocol behavior, not this deployment's eviction policy.",
+      "claim_id": "http-30",
+      "scope": {
+        "corpus_id": "http_rfc"
+      }
+    },
+    {
+      "claim": "Our application's origin generates entity tags using SHA-256 of the response body.",
+      "gold_label": "INSUFFICIENT",
+      "gold_pages": [],
+      "gold_original_ids": [],
+      "gold_sources": [],
+      "notes": "No application implementation or tag-generation configuration is supplied.",
+      "claim_id": "http-31",
+      "scope": {
+        "corpus_id": "http_rfc"
+      }
+    },
+    {
+      "claim": "Our cache has been configured with a 256 MiB storage capacity.",
+      "gold_label": "INSUFFICIENT",
+      "gold_pages": [],
+      "gold_original_ids": [],
+      "gold_sources": [],
+      "notes": "The deployed cache's resource limits are not in the protocol specifications.",
+      "claim_id": "http-32",
+      "scope": {
+        "corpus_id": "http_rfc"
+      }
+    },
+    {
+      "claim": "Our proxy can validate 10000 cached responses per second on its current hardware.",
+      "gold_label": "INSUFFICIENT",
+      "gold_pages": [],
+      "gold_original_ids": [],
+      "gold_sources": [],
+      "notes": "No measurements, hardware description, or workload are supplied.",
+      "claim_id": "http-33",
+      "scope": {
+        "corpus_id": "http_rfc"
+      }
+    },
+    {
+      "claim": "Our currently deployed intermediary supports the stale-while-revalidate extension.",
+      "gold_label": "INSUFFICIENT",
+      "gold_pages": [],
+      "gold_original_ids": [],
+      "gold_sources": [],
+      "notes": "A specification of an extension does not establish deployment support.",
+      "claim_id": "http-34",
+      "scope": {
+        "corpus_id": "http_rfc"
+      }
+    },
+    {
+      "claim": "The current origin response for /asset.js uses chunked transfer coding.",
+      "gold_label": "INSUFFICIENT",
+      "gold_pages": [],
+      "gold_original_ids": [],
+      "gold_sources": [],
+      "notes": "No live response or application configuration is in the corpus.",
+      "claim_id": "http-35",
+      "scope": {
+        "corpus_id": "http_rfc"
+      }
+    }
+  ]
+}

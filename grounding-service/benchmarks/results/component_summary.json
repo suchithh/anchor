@@ -1,0 +1,102 @@
+{
+  "source": "benchmarks\\results\\technical_http\\latest.json",
+  "source_benchmark_id": "a4561fce880547178721f49499e9d49e",
+  "repetition": 2,
+  "selection": "last repetition with all required paths complete; not a fastest-run selection",
+  "new_api_calls": 0,
+  "rows": [
+    {
+      "approach": "Fresh verification",
+      "accuracy": {
+        "value": 0.9444444444444444,
+        "label": "MEASURED"
+      },
+      "average_latency_ms": {
+        "value": 933.9789527908174,
+        "label": "MEASURED"
+      },
+      "p50_latency_ms": {
+        "value": 879.7724498435855,
+        "label": "MEASURED"
+      },
+      "verifier_calls": {
+        "value": 36,
+        "label": "MEASURED"
+      },
+      "cost_usd": {
+        "value": 0.0025230199999999995,
+        "label": "SMALL-SAMPLE ESTIMATE"
+      },
+      "cache_hits": {
+        "value": 0,
+        "label": "MEASURED"
+      }
+    },
+    {
+      "approach": "Reused verification",
+      "accuracy": {
+        "value": 0.9444444444444444,
+        "label": "MEASURED"
+      },
+      "average_latency_ms": {
+        "value": 595.5108111051636,
+        "label": "MEASURED"
+      },
+      "p50_latency_ms": {
+        "value": 545.0695499312133,
+        "label": "MEASURED"
+      },
+      "verifier_calls": {
+        "value": 2,
+        "label": "MEASURED"
+      },
+      "cost_usd": {
+        "value": 0.00015323,
+        "label": "SMALL-SAMPLE ESTIMATE"
+      },
+      "cache_hits": {
+        "value": 34,
+        "label": "MEASURED"
+      }
+    },
+    {
+      "approach": "Small LLM reviewer",
+      "accuracy": {
+        "value": 1.0,
+        "label": "MEASURED"
+      },
+      "average_latency_ms": {
+        "value": 1670.642430609506,
+        "label": "MEASURED"
+      },
+      "p50_latency_ms": {
+        "value": 1403.8462999742478,
+        "label": "MEASURED"
+      },
+      "verifier_calls": {
+        "value": 36,
+        "label": "MEASURED"
+      },
+      "cost_usd": {
+        "value": 0.0012570065999999995,
+        "label": "SMALL-SAMPLE ESTIMATE"
+      },
+      "cache_hits": {
+        "value": 0,
+        "label": "MEASURED"
+      }
+    }
+  ],
+  "parallel_comparison": {
+    "implementation": "reviewer-based verification pipeline",
+    "sequential_wall_ms": 66070.37589978427,
+    "parallel_wall_ms": 10431.212699972093,
+    "concurrency": 8,
+    "label": "MEASURED"
+  },
+  "limitations": [
+    "One complete pass, 36 technical RFC claims; not a reliability average.",
+    "Other recorded passes had network failures.",
+    "Costs include estimated embeddings and exclude Atlas hosting."
+  ]
+}

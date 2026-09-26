@@ -1,0 +1,77 @@
+{
+  "benchmark_id": "b6a0e15d0700488fa6be20883637dbd1",
+  "created_at": "2026-09-26T17:54:34.751535+00:00",
+  "status": "offline_dataset_validation_only",
+  "suite": "scale",
+  "missing": [
+    "MONGODB_URI",
+    "OPENROUTER_API_KEY",
+    "VOYAGE_API_KEY",
+    "BASELINE_MODEL"
+  ],
+  "runs": [],
+  "ingestion": [],
+  "datasets": [
+    {
+      "corpus_id": "synthetic_50",
+      "chunks": 50,
+      "claims": 42,
+      "labels": {
+        "SUPPORTED": 14,
+        "CONTRADICTED": 14,
+        "INSUFFICIENT": 14
+      }
+    },
+    {
+      "corpus_id": "synthetic_500",
+      "chunks": 500,
+      "claims": 42,
+      "labels": {
+        "SUPPORTED": 14,
+        "CONTRADICTED": 14,
+        "INSUFFICIENT": 14
+      }
+    },
+    {
+      "corpus_id": "synthetic_5000",
+      "chunks": 5000,
+      "claims": 42,
+      "labels": {
+        "SUPPORTED": 14,
+        "CONTRADICTED": 14,
+        "INSUFFICIENT": 14
+      }
+    }
+  ],
+  "seed": 42,
+  "python": "3.10.8",
+  "config": {
+    "mongodb_db": "grounding_harness",
+    "jev_model": "typesafe/jev-1.13",
+    "baseline_model": "",
+    "voyage_model": "voyage-3.5-lite",
+    "embedding_dimensions": 1024,
+    "vector_index_name": "grounding_vector",
+    "search_index_name": "grounding_text",
+    "top_k": 3,
+    "max_concurrency": 8,
+    "grounding_alpha": 0.8,
+    "retrieval_mode": "vector",
+    "reranker": "none",
+    "voyage_rerank_model": "rerank-2.5-lite",
+    "voyage_usd_per_million_tokens": null,
+    "voyage_rerank_usd_per_million_tokens": null,
+    "posthoc_max_input_bytes": 60000,
+    "http_timeout_seconds": 90.0
+  },
+  "methodology": {
+    "evidence": "Live retrieval each time; evidence pinned across judges within each repetition",
+    "order": "Seeded shuffled approach order; cached cold pass immediately precedes warm",
+    "atlas_llm_judge": "concurrency=1 serial control",
+    "llm_parallel": "same judge at MAX_CONCURRENCY",
+    "cost": "Includes query embeddings/reranking; ingestion reported separately; Atlas hosting excluded",
+    "cache": "Separate namespace per approach/repetition; no cross-baseline cache reuse"
+  },
+  "summary": [],
+  "crossover": []
+}

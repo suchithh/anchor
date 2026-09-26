@@ -1,0 +1,1 @@
+suite,corpus_size,approach,phase,status,repetitions,accuracy,macro_f1,p50_ms,p95_ms,mean_batch_wall_ms,mean_api_cost,mean_openrouter_cost,cost_kind

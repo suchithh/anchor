@@ -1,0 +1,261 @@
+{
+  "kind": "ILLUSTRATIVE_REPLAY_OF_MEASURED_JUDGMENTS",
+  "source_benchmark_id": "a4561fce880547178721f49499e9d49e",
+  "source_run_id": "a4561fce880547178721f49499e9d49e:http_rfc:2:atlas_jev:cold",
+  "order": "input order; not measured original completion order",
+  "new_api_calls": 0,
+  "timeline": [
+    {
+      "claim_id": "http-00",
+      "verdict": "SUPPORTED",
+      "support": 1.0,
+      "contradiction": 0.0,
+      "insufficient": 0.0
+    },
+    {
+      "claim_id": "http-01",
+      "verdict": "CONTRADICTED",
+      "support": 0.8,
+      "contradiction": 0.19999999999999996,
+      "insufficient": 0.0
+    },
+    {
+      "claim_id": "http-02",
+      "verdict": "SUPPORTED",
+      "support": 0.8400000000000001,
+      "contradiction": 0.15999999999999998,
+      "insufficient": 0.0
+    },
+    {
+      "claim_id": "http-03",
+      "verdict": "CONTRADICTED",
+      "support": 0.6720000000000002,
+      "contradiction": 0.32799999999999996,
+      "insufficient": 0.0
+    },
+    {
+      "claim_id": "http-04",
+      "verdict": "SUPPORTED",
+      "support": 0.7376000000000001,
+      "contradiction": 0.26239999999999997,
+      "insufficient": 0.0
+    },
+    {
+      "claim_id": "http-05",
+      "verdict": "CONTRADICTED",
+      "support": 0.5900800000000002,
+      "contradiction": 0.40991999999999995,
+      "insufficient": 0.0
+    },
+    {
+      "claim_id": "http-06",
+      "verdict": "SUPPORTED",
+      "support": 0.6720640000000001,
+      "contradiction": 0.327936,
+      "insufficient": 0.0
+    },
+    {
+      "claim_id": "http-07",
+      "verdict": "CONTRADICTED",
+      "support": 0.5396512000000001,
+      "contradiction": 0.46034879999999995,
+      "insufficient": 0.0
+    },
+    {
+      "claim_id": "http-08",
+      "verdict": "SUPPORTED",
+      "support": 0.63172096,
+      "contradiction": 0.36827904,
+      "insufficient": 0.0
+    },
+    {
+      "claim_id": "http-09",
+      "verdict": "CONTRADICTED",
+      "support": 0.505376768,
+      "contradiction": 0.49462323199999997,
+      "insufficient": 0.0
+    },
+    {
+      "claim_id": "http-10",
+      "verdict": "SUPPORTED",
+      "support": 0.6023014144,
+      "contradiction": 0.3976985856,
+      "insufficient": 0.0
+    },
+    {
+      "claim_id": "http-11",
+      "verdict": "CONTRADICTED",
+      "support": 0.48184113151999997,
+      "contradiction": 0.51815886848,
+      "insufficient": 0.0
+    },
+    {
+      "claim_id": "http-12",
+      "verdict": "SUPPORTED",
+      "support": 0.5854729052159999,
+      "contradiction": 0.41452709478400007,
+      "insufficient": 0.0
+    },
+    {
+      "claim_id": "http-13",
+      "verdict": "CONTRADICTED",
+      "support": 0.46837832417279995,
+      "contradiction": 0.5316216758272001,
+      "insufficient": 0.0
+    },
+    {
+      "claim_id": "http-14",
+      "verdict": "SUPPORTED",
+      "support": 0.5747026593382399,
+      "contradiction": 0.4252973406617601,
+      "insufficient": 0.0
+    },
+    {
+      "claim_id": "http-15",
+      "verdict": "CONTRADICTED",
+      "support": 0.459762127470592,
+      "contradiction": 0.5402378725294081,
+      "insufficient": 0.0
+    },
+    {
+      "claim_id": "http-16",
+      "verdict": "SUPPORTED",
+      "support": 0.5638097019764736,
+      "contradiction": 0.43619029802352655,
+      "insufficient": 0.0
+    },
+    {
+      "claim_id": "http-17",
+      "verdict": "CONTRADICTED",
+      "support": 0.45104776158117893,
+      "contradiction": 0.5489522384188212,
+      "insufficient": 0.0
+    },
+    {
+      "claim_id": "http-18",
+      "verdict": "SUPPORTED",
+      "support": 0.5608382092649431,
+      "contradiction": 0.439161790735057,
+      "insufficient": 0.0
+    },
+    {
+      "claim_id": "http-19",
+      "verdict": "CONTRADICTED",
+      "support": 0.4486705674119545,
+      "contradiction": 0.5513294325880456,
+      "insufficient": 0.0
+    },
+    {
+      "claim_id": "http-20",
+      "verdict": "SUPPORTED",
+      "support": 0.5589364539295636,
+      "contradiction": 0.44106354607043646,
+      "insufficient": 0.0
+    },
+    {
+      "claim_id": "http-21",
+      "verdict": "SUPPORTED",
+      "support": 0.6011491631436509,
+      "contradiction": 0.3968508368563492,
+      "insufficient": 0.0019999999999999996
+    },
+    {
+      "claim_id": "http-22",
+      "verdict": "SUPPORTED",
+      "support": 0.6809193305149206,
+      "contradiction": 0.31748066948507936,
+      "insufficient": 0.0015999999999999999
+    },
+    {
+      "claim_id": "http-23",
+      "verdict": "CONTRADICTED",
+      "support": 0.5447354644119365,
+      "contradiction": 0.45398453558806345,
+      "insufficient": 0.0012799999999999999
+    },
+    {
+      "claim_id": "http-24",
+      "verdict": "INSUFFICIENT",
+      "support": 0.45578837152954926,
+      "contradiction": 0.3651876284704508,
+      "insufficient": 0.17902399999999996
+    },
+    {
+      "claim_id": "http-25",
+      "verdict": "CONTRADICTED",
+      "support": 0.37063069722363945,
+      "contradiction": 0.41815010277636055,
+      "insufficient": 0.21121919999999994
+    },
+    {
+      "claim_id": "http-26",
+      "verdict": "INSUFFICIENT",
+      "support": 0.29650455777891155,
+      "contradiction": 0.3345200822210885,
+      "insufficient": 0.3689753599999999
+    },
+    {
+      "claim_id": "http-27",
+      "verdict": "INSUFFICIENT",
+      "support": 0.23720364622312926,
+      "contradiction": 0.2676160657768708,
+      "insufficient": 0.4951802879999999
+    },
+    {
+      "claim_id": "http-28",
+      "verdict": "INSUFFICIENT",
+      "support": 0.19376291697850342,
+      "contradiction": 0.21409285262149666,
+      "insufficient": 0.5921442304
+    },
+    {
+      "claim_id": "http-29",
+      "verdict": "INSUFFICIENT",
+      "support": 0.15901033358280275,
+      "contradiction": 0.17127428209719733,
+      "insufficient": 0.6697153843199999
+    },
+    {
+      "claim_id": "http-30",
+      "verdict": "INSUFFICIENT",
+      "support": 0.1272082668662422,
+      "contradiction": 0.13901942567775788,
+      "insufficient": 0.7337723074559999
+    },
+    {
+      "claim_id": "http-31",
+      "verdict": "INSUFFICIENT",
+      "support": 0.11176661349299376,
+      "contradiction": 0.11121554054220631,
+      "insufficient": 0.7770178459647998
+    },
+    {
+      "claim_id": "http-32",
+      "verdict": "INSUFFICIENT",
+      "support": 0.08941329079439501,
+      "contradiction": 0.08897243243376506,
+      "insufficient": 0.8216142767718398
+    },
+    {
+      "claim_id": "http-33",
+      "verdict": "INSUFFICIENT",
+      "support": 0.07153063263551601,
+      "contradiction": 0.07117794594701204,
+      "insufficient": 0.8572914214174718
+    },
+    {
+      "claim_id": "http-34",
+      "verdict": "INSUFFICIENT",
+      "support": 0.05922450610841282,
+      "contradiction": 0.05694235675760964,
+      "insufficient": 0.8838331371339775
+    },
+    {
+      "claim_id": "http-35",
+      "verdict": "INSUFFICIENT",
+      "support": 0.04737960488673026,
+      "contradiction": 0.045553885406087714,
+      "insufficient": 0.907066509707182
+    }
+  ]
+}

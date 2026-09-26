@@ -1,0 +1,15 @@
+.env
+.env.*
+!.env.example
+.venv/
+__pycache__/
+.pytest_cache/
+.ruff_cache/
+*.egg-info/
+benchmarks/results/runs/
+benchmarks/results/**/runs/
+benchmarks/results/technical_pilot/
+benchmarks/results/before_atomic_update/
+benchmarks/results/before_database_deadline/
+benchmarks/results/*_offline/
+benchmarks/results/live_preflight.json
