@@ -1,7 +1,7 @@
-# Benchmark snapshot
+# Benchmark evidence
 
-These reports were copied from ongoing development at 2026-09-26T19:38:26.610828+00:00.
-Benchmark work was still in progress; use each report's status and errors when interpreting results.
-Reports in diagnostic subdirectories preserve earlier experiments and are not final comparisons.
-Later results from the active workspace are not included automatically. Raw per-run archives,
-local credentials, environments, and caches are excluded.
+The latest reports and component summaries were synchronized from the development workspace for publication. Read each report's status, errors, and limitations before comparing results; incomplete runs are retained as evidence.
+
+`component_summary.md` contains a small, matched comparison drawn from existing measurements. `running_score_replay.json` is an illustrative replay of measured judgments, not a new timed benchmark. The repository's `RUNNING_SCORE_DEMO.md` explains the running-score versus post-hoc comparison and its limits.
+
+Diagnostic subdirectories preserve earlier experiments and are not final comparisons. Raw per-run archives, credentials, environments, and caches are excluded from new publication.

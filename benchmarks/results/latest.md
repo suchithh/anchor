@@ -1,17 +1,24 @@
 # Grounding benchmark
 
-Status: **running**
+Status: **completed_with_failures**
 
 Missing configuration: none
 
+Notes:
+
+- Benchmark expansion was stopped at user request to prioritize integration; see INTEGRATION.md.
+- Network failures count against end-to-end accuracy. This is not model-only factual accuracy.
+- The third post-hoc run encountered a persistence timeout after a successful model response; the old runner discarded all results. That reporting bug is fixed and unit-tested, but its live rerun was stopped. Do not interpret that row as 36 incorrect model judgments.
+- The 5000-chunk scaling and hybrid follow-up experiments are unmeasured; no crossover threshold is established.
+
 | Approach / phase | Corpus | Accuracy | p50 ms | p95 ms | Mean batch ms | Mean API USD | OpenRouter USD |
 |---|---:|---:|---:|---:|---:|---:|---:|
-| atlas_jev / cold (completed) | 582 | 0.944444 | 857.513 | 2429.94 | 5610.47 | 0.00251643 ESTIMATED | 0.00250123 |
-| atlas_jev_cached / cold (partial_failure) | 582 | 0.916667 | 1049.19 | 1324.39 | 34744.3 | 0.00251643 ESTIMATED | 0.00250123 |
-| atlas_jev_cached / warm (completed) | 582 | 0.944444 | 540.737 | 564.356 | 2689.61 | 0 | 0 |
-| atlas_llm_judge / cold (completed) | 582 | 1 | 1307.88 | 3586.96 | 55126.3 | 0.0012508 ESTIMATED | 0.0012356 |
-| llm_parallel / cold (partial_failure) | 582 | 0.972222 | 1428.73 | 3540.78 | 96209.1 | unavailable | 0.00133377 |
-| llm_posthoc / cold (completed) | 582 | 1 | 11639.6 | 11639.6 | 11643.4 | 0.00206792 | 0.00206792 |
+| atlas_jev / cold (completed) | 582 | 0.944444 | 915.934 | 1846.82 | 5055.74 | 0.00251862 ESTIMATED | 0.00250342 |
+| atlas_jev_cached / cold (completed,partial_failure) | 582 | 0.916667 | 1127.06 | 1386.86 | 24931.8 | unavailable ESTIMATED | unavailable |
+| atlas_jev_cached / warm (completed) | 582 | 0.944444 | 540.737 | 762.091 | 2791.09 | 5.10767e-05 ESTIMATED | 5.089e-05 |
+| atlas_llm_judge / cold (completed,partial_failure) | 582 | 0.990741 | 1318.24 | 3654.57 | 72031.4 | 0.00140692 ESTIMATED | 0.00139172 |
+| llm_parallel / cold (completed,partial_failure) | 582 | 0.990741 | 1481.12 | 3510.6 | 38517.8 | unavailable ESTIMATED | 0.00127737 |
+| llm_posthoc / cold (completed,failed) | 582 | 0.666667 | 10876.7 | 11639.6 | 21597.9 | 0.00206792 | 0.00206792 |
 
 | Corpus size | Post-hoc LLM | Atlas+Jev | Winner / tradeoff |
 |---:|---|---|---|
