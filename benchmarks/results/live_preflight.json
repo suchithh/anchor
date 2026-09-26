@@ -1,0 +1,582 @@
+{
+  "catalog": [
+    {
+      "id": "deepseek/deepseek-v4.1-flash",
+      "context_length": 1048576,
+      "pricing": {
+        "prompt": "0.000000035",
+        "completion": "0.00000029",
+        "input_cache_read": "0.000000001"
+      },
+      "supported_parameters": [
+        "frequency_penalty",
+        "include_reasoning",
+        "logit_bias",
+        "logprobs",
+        "max_tokens",
+        "min_p",
+        "presence_penalty",
+        "reasoning",
+        "reasoning_effort",
+        "repetition_penalty",
+        "response_format",
+        "seed",
+        "stop",
+        "structured_outputs",
+        "temperature",
+        "tool_choice",
+        "tools",
+        "top_k",
+        "top_logprobs",
+        "top_p"
+      ]
+    },
+    {
+      "id": "deepseek/deepseek-v4.1-flash:batch",
+      "context_length": 1048576,
+      "pricing": {
+        "prompt": "0.000000112",
+        "completion": "0.000000336",
+        "input_cache_read": "0.00000000336"
+      },
+      "supported_parameters": [
+        "frequency_penalty",
+        "include_reasoning",
+        "logit_bias",
+        "max_tokens",
+        "min_p",
+        "presence_penalty",
+        "reasoning",
+        "reasoning_effort",
+        "repetition_penalty",
+        "response_format",
+        "seed",
+        "stop",
+        "structured_outputs",
+        "temperature",
+        "tool_choice",
+        "tools",
+        "top_k",
+        "top_p"
+      ]
+    },
+    {
+      "id": "deepseek/deepseek-v4-flash-vision-exp",
+      "context_length": 1048576,
+      "pricing": {
+        "prompt": "0.00000022",
+        "completion": "0.00000066",
+        "input_cache_read": "0.000000007"
+      },
+      "supported_parameters": [
+        "frequency_penalty",
+        "include_reasoning",
+        "logit_bias",
+        "logprobs",
+        "max_tokens",
+        "min_p",
+        "presence_penalty",
+        "reasoning",
+        "reasoning_effort",
+        "repetition_penalty",
+        "response_format",
+        "seed",
+        "stop",
+        "structured_outputs",
+        "temperature",
+        "tool_choice",
+        "tools",
+        "top_k",
+        "top_logprobs",
+        "top_p"
+      ]
+    },
+    {
+      "id": "deepseek/deepseek-v4-pro-0813",
+      "context_length": 1048576,
+      "pricing": {
+        "prompt": "0.000000264",
+        "completion": "0.000000792",
+        "input_cache_read": "0.0000000088"
+      },
+      "supported_parameters": [
+        "frequency_penalty",
+        "include_reasoning",
+        "logit_bias",
+        "logprobs",
+        "max_tokens",
+        "min_p",
+        "presence_penalty",
+        "reasoning",
+        "reasoning_effort",
+        "repetition_penalty",
+        "response_format",
+        "seed",
+        "stop",
+        "structured_outputs",
+        "temperature",
+        "tool_choice",
+        "tools",
+        "top_k",
+        "top_logprobs",
+        "top_p"
+      ]
+    },
+    {
+      "id": "deepseek/deepseek-v4-flash-0731",
+      "context_length": 1310720,
+      "pricing": {
+        "prompt": "0.000000021",
+        "completion": "0.00000032",
+        "input_cache_read": "0.000000016"
+      },
+      "supported_parameters": [
+        "frequency_penalty",
+        "include_reasoning",
+        "logit_bias",
+        "logprobs",
+        "max_tokens",
+        "min_p",
+        "parallel_tool_calls",
+        "presence_penalty",
+        "reasoning",
+        "reasoning_effort",
+        "repetition_penalty",
+        "response_format",
+        "seed",
+        "stop",
+        "structured_outputs",
+        "temperature",
+        "tool_choice",
+        "tools",
+        "top_a",
+        "top_k",
+        "top_logprobs",
+        "top_p"
+      ]
+    },
+    {
+      "id": "deepseek/deepseek-v4-pro",
+      "context_length": 1048576,
+      "pricing": {
+        "prompt": "0.000000348",
+        "completion": "0.000000696",
+        "input_cache_read": "0.000000029"
+      },
+      "supported_parameters": [
+        "frequency_penalty",
+        "include_reasoning",
+        "logit_bias",
+        "logprobs",
+        "max_completion_tokens",
+        "max_tokens",
+        "min_p",
+        "presence_penalty",
+        "reasoning",
+        "reasoning_effort",
+        "repetition_penalty",
+        "response_format",
+        "seed",
+        "stop",
+        "structured_outputs",
+        "temperature",
+        "tool_choice",
+        "tools",
+        "top_k",
+        "top_logprobs",
+        "top_p"
+      ]
+    },
+    {
+      "id": "deepseek/deepseek-v4-flash",
+      "context_length": 1048576,
+      "pricing": {
+        "prompt": "0.00000004704",
+        "completion": "0.00000009408",
+        "input_cache_read": "0.000000009408"
+      },
+      "supported_parameters": [
+        "frequency_penalty",
+        "include_reasoning",
+        "logit_bias",
+        "logprobs",
+        "max_completion_tokens",
+        "max_tokens",
+        "min_p",
+        "presence_penalty",
+        "reasoning",
+        "reasoning_effort",
+        "repetition_penalty",
+        "response_format",
+        "seed",
+        "stop",
+        "structured_outputs",
+        "temperature",
+        "tool_choice",
+        "tools",
+        "top_a",
+        "top_k",
+        "top_logprobs",
+        "top_p"
+      ]
+    },
+    {
+      "id": "deepseek/deepseek-v3.2",
+      "context_length": 163840,
+      "pricing": {
+        "prompt": "0.000000269",
+        "completion": "0.0000004",
+        "input_cache_read": "0.0000001345"
+      },
+      "supported_parameters": [
+        "frequency_penalty",
+        "include_reasoning",
+        "logit_bias",
+        "logprobs",
+        "max_tokens",
+        "min_p",
+        "presence_penalty",
+        "reasoning",
+        "repetition_penalty",
+        "response_format",
+        "seed",
+        "stop",
+        "structured_outputs",
+        "temperature",
+        "tool_choice",
+        "tools",
+        "top_k",
+        "top_logprobs",
+        "top_p"
+      ]
+    },
+    {
+      "id": "deepseek/deepseek-v3.2-exp",
+      "context_length": 163840,
+      "pricing": {
+        "prompt": "0.00000027",
+        "completion": "0.00000041"
+      },
+      "supported_parameters": [
+        "frequency_penalty",
+        "include_reasoning",
+        "logit_bias",
+        "logprobs",
+        "max_tokens",
+        "min_p",
+        "presence_penalty",
+        "reasoning",
+        "repetition_penalty",
+        "response_format",
+        "seed",
+        "stop",
+        "structured_outputs",
+        "temperature",
+        "tool_choice",
+        "tools",
+        "top_k",
+        "top_logprobs",
+        "top_p"
+      ]
+    },
+    {
+      "id": "deepseek/deepseek-v3.1-terminus",
+      "context_length": 163840,
+      "pricing": {
+        "prompt": "0.00000027",
+        "completion": "0.000001",
+        "input_cache_read": "0.000000135"
+      },
+      "supported_parameters": [
+        "frequency_penalty",
+        "include_reasoning",
+        "logit_bias",
+        "max_tokens",
+        "min_p",
+        "presence_penalty",
+        "reasoning",
+        "repetition_penalty",
+        "response_format",
+        "seed",
+        "stop",
+        "structured_outputs",
+        "temperature",
+        "tool_choice",
+        "tools",
+        "top_k",
+        "top_p"
+      ]
+    },
+    {
+      "id": "deepseek/deepseek-chat-v3.1",
+      "context_length": 163840,
+      "pricing": {
+        "prompt": "0.00000025",
+        "completion": "0.00000095",
+        "input_cache_read": "0.00000013"
+      },
+      "supported_parameters": [
+        "frequency_penalty",
+        "include_reasoning",
+        "logit_bias",
+        "logprobs",
+        "max_tokens",
+        "min_p",
+        "presence_penalty",
+        "reasoning",
+        "repetition_penalty",
+        "response_format",
+        "seed",
+        "stop",
+        "structured_outputs",
+        "temperature",
+        "tool_choice",
+        "tools",
+        "top_k",
+        "top_logprobs",
+        "top_p"
+      ]
+    },
+    {
+      "id": "google/gemini-2.5-flash-lite",
+      "context_length": 1048576,
+      "pricing": {
+        "prompt": "0.0000001",
+        "completion": "0.0000004",
+        "image": "0.0000001",
+        "audio": "0.0000003",
+        "input_audio_cache": "0.00000003",
+        "web_search": "0.014",
+        "internal_reasoning": "0.0000004",
+        "input_cache_read": "0.00000001",
+        "input_cache_write": "0.0000000833333333333333"
+      },
+      "supported_parameters": [
+        "include_reasoning",
+        "max_tokens",
+        "reasoning",
+        "response_format",
+        "seed",
+        "stop",
+        "structured_outputs",
+        "temperature",
+        "tool_choice",
+        "tools",
+        "top_p"
+      ]
+    },
+    {
+      "id": "deepseek/deepseek-r1-0528",
+      "context_length": 163840,
+      "pricing": {
+        "prompt": "0.0000005",
+        "completion": "0.00000215",
+        "input_cache_read": "0.00000035"
+      },
+      "supported_parameters": [
+        "frequency_penalty",
+        "include_reasoning",
+        "logit_bias",
+        "logprobs",
+        "max_tokens",
+        "min_p",
+        "presence_penalty",
+        "reasoning",
+        "repetition_penalty",
+        "response_format",
+        "seed",
+        "stop",
+        "structured_outputs",
+        "temperature",
+        "tool_choice",
+        "tools",
+        "top_k",
+        "top_logprobs",
+        "top_p"
+      ]
+    },
+    {
+      "id": "deepseek/deepseek-chat-v3-0324",
+      "context_length": 163840,
+      "pricing": {
+        "prompt": "0.00000025",
+        "completion": "0.000001"
+      },
+      "supported_parameters": [
+        "frequency_penalty",
+        "logit_bias",
+        "logprobs",
+        "max_tokens",
+        "min_p",
+        "presence_penalty",
+        "repetition_penalty",
+        "response_format",
+        "seed",
+        "stop",
+        "structured_outputs",
+        "temperature",
+        "tool_choice",
+        "tools",
+        "top_k",
+        "top_logprobs",
+        "top_p"
+      ]
+    },
+    {
+      "id": "deepseek/deepseek-r1-distill-llama-70b",
+      "context_length": 8192,
+      "pricing": {
+        "prompt": "0.0000008",
+        "completion": "0.0000008"
+      },
+      "supported_parameters": [
+        "frequency_penalty",
+        "include_reasoning",
+        "max_tokens",
+        "presence_penalty",
+        "reasoning",
+        "repetition_penalty",
+        "seed",
+        "stop",
+        "temperature",
+        "top_k",
+        "top_p"
+      ]
+    },
+    {
+      "id": "deepseek/deepseek-r1",
+      "context_length": 64000,
+      "pricing": {
+        "prompt": "0.0000007",
+        "completion": "0.0000025"
+      },
+      "supported_parameters": [
+        "frequency_penalty",
+        "include_reasoning",
+        "max_tokens",
+        "presence_penalty",
+        "reasoning",
+        "repetition_penalty",
+        "response_format",
+        "seed",
+        "stop",
+        "temperature",
+        "tool_choice",
+        "tools",
+        "top_k",
+        "top_p"
+      ]
+    },
+    {
+      "id": "deepseek/deepseek-chat",
+      "context_length": 163840,
+      "pricing": {
+        "prompt": "0.00000032",
+        "completion": "0.00000089"
+      },
+      "supported_parameters": [
+        "frequency_penalty",
+        "logit_bias",
+        "max_tokens",
+        "min_p",
+        "presence_penalty",
+        "repetition_penalty",
+        "response_format",
+        "seed",
+        "stop",
+        "structured_outputs",
+        "temperature",
+        "tool_choice",
+        "tools",
+        "top_k",
+        "top_p"
+      ]
+    }
+  ],
+  "credits_before": {
+    "total_credits": 0,
+    "total_usage": 0
+  },
+  "checks": {
+    "voyage": {
+      "status": "ok",
+      "usage": {
+        "provider": "voyage",
+        "operation": "embedding",
+        "calls": 1,
+        "input_tokens": 13,
+        "output_tokens": null,
+        "cost": null,
+        "cost_kind": "unavailable",
+        "model": "voyage-3.5-lite"
+      },
+      "verdict": null,
+      "dimensions": 1024
+    },
+    "jev": {
+      "status": "ok",
+      "usage": {
+        "provider": "openrouter",
+        "operation": "jev",
+        "calls": 1,
+        "input_tokens": 551,
+        "output_tokens": 52,
+        "cost": 2.3142e-05,
+        "cost_kind": "actual",
+        "model": "typesafe/jev-1.13-20260917"
+      },
+      "verdict": "SUPPORTED",
+      "dimensions": null
+    },
+    "llm": {
+      "status": "ok",
+      "usage": {
+        "provider": "openrouter",
+        "operation": "llm",
+        "calls": 1,
+        "input_tokens": 270,
+        "output_tokens": 26,
+        "cost": 4.233e-05,
+        "cost_kind": "actual",
+        "model": "deepseek/deepseek-v4.1-flash"
+      },
+      "verdict": "SUPPORTED",
+      "dimensions": null
+    }
+  },
+  "calls": [
+    {
+      "provider": "voyage",
+      "operation": "embeddings",
+      "model": "voyage-3.5-lite",
+      "calls": 1,
+      "input_tokens": 13,
+      "output_tokens": null,
+      "cost": null,
+      "cost_kind": "unavailable",
+      "status": "http_success"
+    },
+    {
+      "provider": "openrouter",
+      "operation": "decisions",
+      "model": "typesafe/jev-1.13-20260917",
+      "calls": 1,
+      "input_tokens": 551,
+      "output_tokens": 52,
+      "cost": 2.3142e-05,
+      "cost_kind": "actual",
+      "status": "http_success"
+    },
+    {
+      "provider": "openrouter",
+      "operation": "completions",
+      "model": "deepseek/deepseek-v4.1-flash",
+      "calls": 1,
+      "input_tokens": 270,
+      "output_tokens": 26,
+      "cost": 4.233e-05,
+      "cost_kind": "actual",
+      "status": "http_success"
+    }
+  ]
+}

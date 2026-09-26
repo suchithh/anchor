@@ -1,0 +1,253 @@
+{
+  "type": "standalone_full_context_reference",
+  "model": "deepseek/deepseek-v4.1-flash",
+  "num_chunks": 582,
+  "num_claims": 36,
+  "limitations": "No Atlas ingestion/retrieval/persistence; not comparable to end-to-end benchmark latency",
+  "status": "completed",
+  "verifier_wall_ms": 27107.82379982993,
+  "usage": {
+    "provider": "openrouter",
+    "operation": "llm",
+    "calls": 1,
+    "input_tokens": 197689,
+    "output_tokens": 704,
+    "cost": 0.01609672,
+    "cost_kind": "actual",
+    "model": "deepseek/deepseek-v4.1-flash"
+  },
+  "accuracy": 1.0,
+  "records": [
+    {
+      "claim_id": "http-00",
+      "claim": "Under RFC 9111, an unqualified no-cache response directive requires successful validation before using the response to satisfy another request.",
+      "gold_label": "SUPPORTED",
+      "verdict": "SUPPORTED"
+    },
+    {
+      "claim_id": "http-01",
+      "claim": "Under RFC 9111, an unqualified no-cache response may be reused without validation whenever it is still fresh.",
+      "gold_label": "CONTRADICTED",
+      "verdict": "CONTRADICTED"
+    },
+    {
+      "claim_id": "http-02",
+      "claim": "Under RFC 9111, when a response includes Cache-Control: max-age, the recipient must ignore its Expires header field.",
+      "gold_label": "SUPPORTED",
+      "verdict": "SUPPORTED"
+    },
+    {
+      "claim_id": "http-03",
+      "claim": "Under RFC 9111, Expires takes precedence over Cache-Control: max-age when both occur in the same response.",
+      "gold_label": "CONTRADICTED",
+      "verdict": "CONTRADICTED"
+    },
+    {
+      "claim_id": "http-04",
+      "claim": "RFC 9111 prohibits a shared cache from storing a response carrying an unqualified private directive.",
+      "gold_label": "SUPPORTED",
+      "verdict": "SUPPORTED"
+    },
+    {
+      "claim_id": "http-05",
+      "claim": "RFC 9111 permits a shared cache to store a response carrying an unqualified private directive solely because its max-age is positive.",
+      "gold_label": "CONTRADICTED",
+      "verdict": "CONTRADICTED"
+    },
+    {
+      "claim_id": "http-06",
+      "claim": "Under RFC 9111, a disconnected cache must return an error instead of reusing a stale response carrying must-revalidate.",
+      "gold_label": "SUPPORTED",
+      "verdict": "SUPPORTED"
+    },
+    {
+      "claim_id": "http-07",
+      "claim": "Under RFC 9111, being disconnected allows a cache to ignore must-revalidate and serve the stale response.",
+      "gold_label": "CONTRADICTED",
+      "verdict": "CONTRADICTED"
+    },
+    {
+      "claim_id": "http-08",
+      "claim": "Under RFC 9111, a stored response whose Vary field contains \"*\" always fails to match.",
+      "gold_label": "SUPPORTED",
+      "verdict": "SUPPORTED"
+    },
+    {
+      "claim_id": "http-09",
+      "claim": "Under RFC 9111, Vary: * makes a stored response match every request for its target URI.",
+      "gold_label": "CONTRADICTED",
+      "verdict": "CONTRADICTED"
+    },
+    {
+      "claim_id": "http-10",
+      "claim": "RFC 9111 requires a cache to handle delta-seconds overflow as 2147483648 or the greatest positive integer it can conveniently represent.",
+      "gold_label": "SUPPORTED",
+      "verdict": "SUPPORTED"
+    },
+    {
+      "claim_id": "http-11",
+      "claim": "RFC 9111 requires overflowing delta-seconds values to wrap to negative integers.",
+      "gold_label": "CONTRADICTED",
+      "verdict": "CONTRADICTED"
+    },
+    {
+      "claim_id": "http-12",
+      "claim": "RFC 9110 forbids a server from sending content in a HEAD response.",
+      "gold_label": "SUPPORTED",
+      "verdict": "SUPPORTED"
+    },
+    {
+      "claim_id": "http-13",
+      "claim": "RFC 9110 requires a HEAD response to contain the same response body as GET.",
+      "gold_label": "CONTRADICTED",
+      "verdict": "CONTRADICTED"
+    },
+    {
+      "claim_id": "http-14",
+      "claim": "Under RFC 9110 strong entity-tag comparison, W/\"1\" and \"1\" do not match.",
+      "gold_label": "SUPPORTED",
+      "verdict": "SUPPORTED"
+    },
+    {
+      "claim_id": "http-15",
+      "claim": "Under RFC 9110 strong entity-tag comparison, W/\"1\" and \"1\" match because their opaque tags are identical.",
+      "gold_label": "CONTRADICTED",
+      "verdict": "CONTRADICTED"
+    },
+    {
+      "claim_id": "http-16",
+      "claim": "RFC 9112 says Transfer-Encoding overrides Content-Length when a message contains both fields.",
+      "gold_label": "SUPPORTED",
+      "verdict": "SUPPORTED"
+    },
+    {
+      "claim_id": "http-17",
+      "claim": "RFC 9112 says Content-Length overrides Transfer-Encoding when a message contains both fields.",
+      "gold_label": "CONTRADICTED",
+      "verdict": "CONTRADICTED"
+    },
+    {
+      "claim_id": "http-18",
+      "claim": "RFC 9112 completes chunked transfer coding with a zero-size chunk, an optional trailer section, and a final empty line.",
+      "gold_label": "SUPPORTED",
+      "verdict": "SUPPORTED"
+    },
+    {
+      "claim_id": "http-19",
+      "claim": "RFC 9112 says chunked transfer coding is complete immediately after any nonzero-size chunk, without a zero-size terminating chunk.",
+      "gold_label": "CONTRADICTED",
+      "verdict": "CONTRADICTED"
+    },
+    {
+      "claim_id": "http-20",
+      "claim": "RFC 5861's max-age=600, stale-while-revalidate=30 example allows an additional 30 seconds of stale serving while asynchronous validation is attempted.",
+      "gold_label": "SUPPORTED",
+      "verdict": "SUPPORTED"
+    },
+    {
+      "claim_id": "http-21",
+      "claim": "RFC 5861's max-age=600, stale-while-revalidate=30 example grants 630 additional seconds of stale serving after freshness expires.",
+      "gold_label": "CONTRADICTED",
+      "verdict": "CONTRADICTED"
+    },
+    {
+      "claim_id": "http-22",
+      "claim": "RFC 8246 limits immutable to the freshness lifetime; stale responses should be revalidated normally.",
+      "gold_label": "SUPPORTED",
+      "verdict": "SUPPORTED"
+    },
+    {
+      "claim_id": "http-23",
+      "claim": "RFC 8246 says immutable permanently exempts a cached response from revalidation, including after it becomes stale.",
+      "gold_label": "CONTRADICTED",
+      "verdict": "CONTRADICTED"
+    },
+    {
+      "claim_id": "http-24",
+      "claim": "A stored response with max-age=600 is still fresh right now.",
+      "gold_label": "INSUFFICIENT",
+      "verdict": "INSUFFICIENT"
+    },
+    {
+      "claim_id": "http-25",
+      "claim": "Two requests for /report are interchangeable under Vary: Accept-Language.",
+      "gold_label": "INSUFFICIENT",
+      "verdict": "INSUFFICIENT"
+    },
+    {
+      "claim_id": "http-26",
+      "claim": "The cached representation's strong entity tag matches the origin's current strong entity tag.",
+      "gold_label": "INSUFFICIENT",
+      "verdict": "INSUFFICIENT"
+    },
+    {
+      "claim_id": "http-27",
+      "claim": "The origin server has successfully validated our cached response during the last minute.",
+      "gold_label": "INSUFFICIENT",
+      "verdict": "INSUFFICIENT"
+    },
+    {
+      "claim_id": "http-28",
+      "claim": "Our cache's current response is within the stale-if-error=1200 allowance.",
+      "gold_label": "INSUFFICIENT",
+      "verdict": "INSUFFICIENT"
+    },
+    {
+      "claim_id": "http-29",
+      "claim": "The response currently cached for /private carries an unqualified private directive.",
+      "gold_label": "INSUFFICIENT",
+      "verdict": "INSUFFICIENT"
+    },
+    {
+      "claim_id": "http-30",
+      "claim": "Our HTTP reverse proxy evicts cached objects using least-recently-used replacement.",
+      "gold_label": "INSUFFICIENT",
+      "verdict": "INSUFFICIENT"
+    },
+    {
+      "claim_id": "http-31",
+      "claim": "Our application's origin generates entity tags using SHA-256 of the response body.",
+      "gold_label": "INSUFFICIENT",
+      "verdict": "INSUFFICIENT"
+    },
+    {
+      "claim_id": "http-32",
+      "claim": "Our cache has been configured with a 256 MiB storage capacity.",
+      "gold_label": "INSUFFICIENT",
+      "verdict": "INSUFFICIENT"
+    },
+    {
+      "claim_id": "http-33",
+      "claim": "Our proxy can validate 10000 cached responses per second on its current hardware.",
+      "gold_label": "INSUFFICIENT",
+      "verdict": "INSUFFICIENT"
+    },
+    {
+      "claim_id": "http-34",
+      "claim": "Our currently deployed intermediary supports the stale-while-revalidate extension.",
+      "gold_label": "INSUFFICIENT",
+      "verdict": "INSUFFICIENT"
+    },
+    {
+      "claim_id": "http-35",
+      "claim": "The current origin response for /asset.js uses chunked transfer coding.",
+      "gold_label": "INSUFFICIENT",
+      "verdict": "INSUFFICIENT"
+    }
+  ],
+  "calls": [
+    {
+      "provider": "openrouter",
+      "operation": "completions",
+      "model": "deepseek/deepseek-v4.1-flash",
+      "calls": 1,
+      "input_tokens": 197689,
+      "output_tokens": 704,
+      "cost": 0.01609672,
+      "cost_kind": "actual",
+      "status": "http_success",
+      "http_status": 200,
+      "rate_limit_headers": {}
+    }
+  ]
+}

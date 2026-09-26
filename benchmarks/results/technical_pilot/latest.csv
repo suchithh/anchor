@@ -1,0 +1,2 @@
+suite,corpus_size,approach,phase,status,repetitions,accuracy,macro_f1,p50_ms,p95_ms,mean_batch_wall_ms,mean_api_cost,mean_openrouter_cost,cost_kind
+http_rfc,582,atlas_jev,cold,completed,1,0.9444444444444444,0.9443961352657005,1269.6495500858873,2801.716824993491,7468.422600068152,,0.0025012259999999996,unavailable
