@@ -2,7 +2,7 @@
 
 Ground truth for Pi agents, backed by MongoDB Atlas verified state.
 
-**Integrated Pi → MongoDB grounding demo:** see [DEMO.md](DEMO.md) for setup,
+**Pi → MongoDB grounding:** see [DEMO.md](DEMO.md) for setup,
 the 60-second walkthrough and limits. The extension now observes completed assistant
 messages when `PI_GRAIL_GROUNDING_ENABLED=true`, calls the Python service asynchronously,
 and renders results inside Pi. Python lives under `grounding-service/`, imported with

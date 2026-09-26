@@ -33,7 +33,8 @@ npm run dev -- --extension .
 ```
 
 The widget, notifications and correction message all render inside Pi. No dashboard.
-The initial 95% is explicitly a demo score with zero checks, never fabricated history.
+The UI shows a Grounding index out of 100. Its initial 95 is a configured baseline
+with zero checks, not measured confidence or fabricated history.
 
 ## 60-second presentation
 
@@ -72,7 +73,7 @@ are injected as evidence with `deliverAs: steer`, without starting an extra agen
 If the agent is idle, correction is consumed on the next turn. Original backend
 deployments lacking this endpoint still verify; correction reports an explicit 404.
 
-`DEMO_MODE=true` enables the animated local score. It is not a calibrated probability
+`DEMO_MODE=true` enables the animated local Grounding index. It is not a calibrated probability
 or the backend EWMA. Counts start at zero and use real events/usage. A supported
 follow-up after drift is a presentation recovery, not proof all prior claims were fixed.
 With demo mode off, verdicts, counters, timings and evidence still work without a score.

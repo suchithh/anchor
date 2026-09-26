@@ -23,8 +23,8 @@ export class Presentation {
     return { before, after: this.score, recovered };
   }
   lines(demo: boolean, pending: number, shown = this.score): string[] {
-    return ["──────────────────────────────────", "GRAIL GROUNDING",
-      ...(demo ? [`Demo score        ${shown}% (not a probability)`, "█".repeat(Math.round(shown/5)) + "░".repeat(20-Math.round(shown/5))] : []),
+    return ["──────────────────────────────────", "ANCHOR · GROUNDING",
+      ...(demo ? [`Grounding index   ${shown}/100`, "█".repeat(Math.round(shown/5)) + "░".repeat(20-Math.round(shown/5))] : []),
       `Status            ${this.status}`, `Claims checked    ${this.checked}`,
       `Verified hits     ${this.hits}`, `Verifier calls    ${this.calls}`, `Pending           ${pending}`,
       "──────────────────────────────────"];

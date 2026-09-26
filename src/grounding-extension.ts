@@ -58,7 +58,7 @@ export function registerGrounding(pi: ExtensionAPI) {
           `Cache: ${result.cache_hit ? "HIT · source hashes/revision checked" : "MISS"}`,
           `Verifier: ${result.verifier}${result.cache_hit ? " · SKIPPED (call avoided)" : ""}`,
           `Latency: ${result.total_latency_ms.toFixed(0)} ms · lookup ${result.cache_lookup_latency_ms.toFixed(0)} · retrieval ${result.retrieval_latency_ms.toFixed(0)} · verifier ${result.verifier_latency_ms.toFixed(0)}`,
-          ...(config.demo ? [`Demo score: ${transition.before}% → ${transition.after}% (not a probability)`] : []),
+          ...(config.demo ? [`Grounding index: ${transition.before} → ${transition.after} / 100`] : []),
           ...(transition.recovered ? ["✓ SUPPORTED FOLLOW-UP AFTER DRIFT"] : [])].join("\n"));
         animate(ctx, config.demo, transition.before, transition.after);
         if (result.verdict === "CONTRADICTED") {
@@ -101,7 +101,7 @@ export function registerGrounding(pi: ExtensionAPI) {
       try {
         const [command = "status", ...rest] = args.trim().split(/\s+/);
         const config = groundingConfig();
-        if (command === "status" || command === "") show(ctx, `Grounding ${config.enabled ? "enabled" : "disabled"}\nService: ${config.url}\nCorpus: ${config.corpus || "NOT SET"}\nRun: ${run}\nDemo score: ${config.demo}\nLocal configuration only; /ground test checks connectivity.`);
+        if (command === "status" || command === "") show(ctx, `Anchor grounding ${config.enabled ? "enabled" : "disabled"}\nService: ${config.url}\nCorpus: ${config.corpus || "NOT SET"}\nRun: ${run}\nGrounding index: ${config.demo ? "enabled" : "disabled"}\nConnection: unchecked; run /ground test.`);
         else if (command === "score") { draw(ctx, config.demo); show(ctx, state.lines(config.demo, pending.size).join("\n")); }
         else if (command === "new") { reset(); draw(ctx, config.demo); show(ctx, "New run; Atlas verified state retained. /ground repeat reuses the last claim."); }
         else if (command === "repeat") {
