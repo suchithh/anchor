@@ -148,3 +148,8 @@ async def test_atomic_score_pipeline_matches_ordered_ewma_and_literal_ids(db, re
         stored[k] for k in ["grounding_score", "contradiction_score", "insufficient_score"]
     ] == pytest.approx(expected)
     assert {e["claim_id"] for e in stored["events"].values()} == {"$literal-0", "$literal-1", "$literal-2"}
+    history = sorted(stored["events"].values(), key=lambda event: event["commit_sequence"])
+    assert [event["commit_sequence"] for event in history] == [1, 2, 3]
+    assert history[0]["score_after"]["grounding_score"] == 1
+    assert history[1]["score_after"]["grounding_score"] == pytest.approx(0.8)
+    assert history[2]["score_after"]["grounding_score"] == pytest.approx(expected[0])

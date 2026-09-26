@@ -12,11 +12,12 @@ from src.runtime import runtime
 @asynccontextmanager
 async def lifespan(app):
     settings = Settings()
-    if settings.missing():
-        raise RuntimeError("Missing configuration: " + ", ".join(settings.missing()))
+    missing = settings.missing(baseline=settings.verifier == "llm")
+    if missing:
+        raise RuntimeError("Missing configuration: " + ", ".join(missing))
     async with runtime(settings) as rt:
         app.state.runtime = rt
-        app.state.service = rt.service()
+        app.state.service = rt.service(settings.verifier)
         yield
 
 
@@ -58,8 +59,8 @@ async def batch(request: Batch):
 
 
 @app.get("/runs/{run_id}")
-async def run(run_id: str):
-    result = await app.state.runtime.runs.get(run_id)
+async def run(run_id: str, include_events: bool = False):
+    result = await app.state.runtime.runs.get(run_id, include_events=include_events)
     if result is None:
         raise HTTPException(404, "Unknown run")
     return result

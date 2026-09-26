@@ -15,6 +15,7 @@ class Settings(BaseSettings):
     jev_model: str = "typesafe/jev-1.13"
     baseline_model: str = ""
     baseline_reasoning: bool = False
+    verifier: Literal["jev", "llm"] = "llm"
     voyage_model: str = "voyage-3.5-lite"
     embedding_dimensions: int = Field(1024, gt=0)
     vector_index_name: str = "grounding_vector"

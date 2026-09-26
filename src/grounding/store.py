@@ -81,11 +81,12 @@ class MongoRuns:
                         "num_cache_hits": {"$add": ["$num_cache_hits", int(result.cache_hit)]},
                         "updated_at": datetime.now(timezone.utc),
                         f"events.{key}": {
-                            "$literal": {
-                                "claim_id": request.claim_id,
-                                "fingerprint": request_fingerprint(request),
-                                "result": result.model_dump(mode="json"),
-                            }
+                            "claim_id": {"$literal": request.claim_id},
+                            "fingerprint": {"$literal": request_fingerprint(request)},
+                            "result": {"$literal": result.model_dump(mode="json")},
+                            "commit_sequence": {"$add": ["$num_claims", 1]},
+                            "score_after": scores,
+                            "committed_at": datetime.now(timezone.utc),
                         },
                     }
                 }

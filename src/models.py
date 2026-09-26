@@ -20,7 +20,7 @@ class VerificationRequest(BaseModel):
     claim: str = Field(min_length=1, max_length=20000)
     context: str | None = Field(None, max_length=30000)
     scope: dict[str, Any]
-    importance: float = Field(1, gt=0, le=100)
+    importance: float = Field(1, ge=0)
 
     @model_validator(mode="after")
     def check_scope(self):
